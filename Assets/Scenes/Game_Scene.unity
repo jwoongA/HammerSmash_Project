@@ -5539,6 +5539,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6655928268628096814, guid: eb116dc8a7f993a4f87772400397b96b, type: 3}
+      propertyPath: m_Name
+      value: HammerTime
+      objectReference: {fileID: 0}
     - target: {fileID: 8819019963051537054, guid: eb116dc8a7f993a4f87772400397b96b, type: 3}
       propertyPath: m_Name
       value: Items

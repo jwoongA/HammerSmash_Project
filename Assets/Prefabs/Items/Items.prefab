@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2927890180420857681}
   - component: {fileID: 7600679166188266728}
   m_Layer: 0
-  m_Name: Giant
+  m_Name: HammerTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

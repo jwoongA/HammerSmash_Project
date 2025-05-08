@@ -11,7 +11,7 @@ public class Item : MonoBehaviour
         SmallHeal,
         LargeHeal,
         FastRun,
-        Giant
+        HammerTime
     }
 
     public ItemType itemType;
@@ -33,21 +33,23 @@ public class Item : MonoBehaviour
         {
             case ItemType.SmallHeal:
                 Debug.Log("소형 체력 물약");
-                // 체력 회복 시스템 구현
+                // 체력 회복 시스템 구현, 10회복
                 break;
                 case ItemType.LargeHeal:
                 Debug.Log("대형 체력 물약");
-                // 체력 회복 시스템 구현
+                // 체력 회복 시스템 구현, 40회복
                 break;
                 case ItemType.FastRun:
                 Debug.Log("속도 증가");
-                // 속도 증가
+                // 속도 증가 2배, 2.2초동안 지속
                 break;
-            case ItemType.Giant:
-                Debug.Log("커지면서 무적");
+            case ItemType.HammerTime:
+                Debug.Log("망치 나가신다!");
+                // 무적 시간, 3.4초동안 지속
                 break;
             case ItemType.Magnet:
                 Debug.Log("자석 효과");
+                // 자석 효과, 2.8초동안 지속
                 break;
             default:
                 break;
