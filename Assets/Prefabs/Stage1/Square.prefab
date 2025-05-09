@@ -164,5 +164,7 @@ MonoBehaviour:
   maxWidth: 3
   minSpacing: 2
   maxSpacing: 10
-  fixedPositions: []
+  fixedPositions:
+  - {x: 0, y: -4, z: 0}
   damage: 10
+  spawnIndex: 0
