@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -17,17 +17,17 @@ public class Item : MonoBehaviour
 
     public ItemType itemType;
 
-    // ÀÓ½Ã Å×½ºÆ®¿ë
+    // ì„ì‹œ í…ŒìŠ¤íŠ¸ìš©
     private static int tempHP = 50;
     private const int maxHP = 100;
     public GameObject scrollTarget;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // player.cs °¡ »ı±â¸é °íÃÄ¾ß ÇÒ ºÎºĞ
+        // player.cs ê°€ ìƒê¸°ë©´ ê³ ì³ì•¼ í•  ë¶€ë¶„
         if (!other.CompareTag("Player")) return;
         
-            // ÃßÈÄ ±¸Çö ¿¹Á¤
+            // ì¶”í›„ êµ¬í˜„ ì˜ˆì •
             //Player player = other.GetComponent<Player>();
             //if (player != null)
             //{
@@ -38,50 +38,50 @@ public class Item : MonoBehaviour
         switch (itemType)
         {
             case ItemType.SmallHeal:
-                Debug.Log("¼ÒÇü Ã¼·Â ¹°¾à");
-                // Ã¼·Â È¸º¹ ½Ã½ºÅÛ ±¸Çö, 10È¸º¹
+                Debug.Log("ì†Œí˜• ì²´ë ¥ ë¬¼ì•½");
+                // ì²´ë ¥ íšŒë³µ ì‹œìŠ¤í…œ êµ¬í˜„, 10íšŒë³µ
                 tempHP += 10;
                 break;
                 case ItemType.LargeHeal:
-                Debug.Log("´ëÇü Ã¼·Â ¹°¾à");
-                // Ã¼·Â È¸º¹ ½Ã½ºÅÛ ±¸Çö, 40È¸º¹
+                Debug.Log("ëŒ€í˜• ì²´ë ¥ ë¬¼ì•½");
+                // ì²´ë ¥ íšŒë³µ ì‹œìŠ¤í…œ êµ¬í˜„, 40íšŒë³µ
                 tempHP += 40;
                 break;
                 case ItemType.FastRun:
-                Debug.Log("¼Óµµ Áõ°¡");
-                // ¼Óµµ Áõ°¡ 2¹è, 2.2ÃÊµ¿¾È Áö¼Ó               
+                Debug.Log("ì†ë„ ì¦ê°€");
+                // ì†ë„ ì¦ê°€ 2ë°°, 2.2ì´ˆë™ì•ˆ ì§€ì†               
                 break;
             case ItemType.HammerTime:
-                Debug.Log("¸ÁÄ¡ ³ª°¡½Å´Ù!");
-                // ¹«Àû ½Ã°£, 3.4ÃÊµ¿¾È Áö¼Ó
+                Debug.Log("ë§ì¹˜ ë‚˜ê°€ì‹ ë‹¤!");
+                // ë¬´ì  ì‹œê°„, 3.4ì´ˆë™ì•ˆ ì§€ì†
                 break;
             case ItemType.Magnet:
-                Debug.Log("ÀÚ¼® È¿°ú");
-                // ÀÚ¼® È¿°ú, 2.8ÃÊµ¿¾È Áö¼Ó
+                Debug.Log("ìì„ íš¨ê³¼");
+                // ìì„ íš¨ê³¼, 2.8ì´ˆë™ì•ˆ ì§€ì†
                 break;
             default:
                 break;
         }
 
-        // ÃÖ´ë Ã¼·ÂÀº ³Ñ±âÁö ¸øÇÏ°Ô
+        // ìµœëŒ€ ì²´ë ¥ì€ ë„˜ê¸°ì§€ ëª»í•˜ê²Œ
         tempHP = Mathf.Min(tempHP, maxHP);
 
-        Debug.Log($"Å×½ºÆ® ¾ÆÀÌÅÛ {itemType} È¹µæ");
+        Debug.Log($"í…ŒìŠ¤íŠ¸ ì•„ì´í…œ {itemType} íšë“");
 
         Destroy(gameObject);
     }
 
-    // ¼Óµµ Áõ°¡ ¸ÅÄ¿´ÏÁò
+    // ì†ë„ ì¦ê°€ ë§¤ì»¤ë‹ˆì¦˜
     //private IEnumerator FastRunBoost()
     //{
     //    var scroll = scrollTarget.GetComponent<StageScroller>();
     //    if (scroll != null)
     //    {
     //        scroll.scrollSpeed *= 2f;
-    //        Debug.Log("¼Óµµ 2¹è Áõ°¡");
+    //        Debug.Log("ì†ë„ 2ë°° ì¦ê°€");
     //        yield return new WaitForSeconds(2.2f);
     //        scroll.scrollSpeed /= 2f;
-    //        Debug.Log("¼Óµµ 2¹è Áõ°¡ ³¡");
+    //        Debug.Log("ì†ë„ 2ë°° ì¦ê°€ ë");
     //    }
     //}
 }
