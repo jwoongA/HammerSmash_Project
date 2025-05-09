@@ -235,12 +235,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1393149341952052613, guid: da2218189da40654baf9d5c30a38bfa4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393149341952052613, guid: da2218189da40654baf9d5c30a38bfa4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349281217277880210, guid: da2218189da40654baf9d5c30a38bfa4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4231545452213785361, guid: da2218189da40654baf9d5c30a38bfa4, type: 3}
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6892920347222604473, guid: da2218189da40654baf9d5c30a38bfa4, type: 3}
+      propertyPath: invisiblePlatform
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2349281217277880210, guid: da2218189da40654baf9d5c30a38bfa4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da2218189da40654baf9d5c30a38bfa4, type: 3}
