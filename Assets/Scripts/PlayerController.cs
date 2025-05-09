@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float jumpForce = 5f;
-    private Rigidbody2D rigidboody2d;
+    private Rigidbody2D playrigidboody;
     private Animator animator;
 
     public int maxJumpCount = 2;
@@ -13,21 +13,32 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rigidboody2d = GetComponent<Rigidbody2D>();
+        playrigidboody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && currentJumpCount < maxJumpCount)
+        // 점프
+        if (Input.GetKeyDown(KeyCode.Z) && currentJumpCount < maxJumpCount && !Input.GetKey(KeyCode.X))
         {
-            rigidboody2d.velocity = new Vector2(rigidboody2d.velocity.x, jumpForce);
+            playrigidboody.velocity = new Vector2(playrigidboody.velocity.x, jumpForce);
             animator.SetBool("IsJump", true);
             currentJumpCount++;
         }
 
-        // 아래로 떨어질 때 애니메이션 상태 리셋
-        if (rigidboody2d.velocity.y <= 0)
+        // 슬라이딩 (X키 누르고 있을 때)
+        if (Input.GetKey(KeyCode.X))
+        {
+            animator.SetBool("IsSliding", true);
+        }
+        else
+        {
+            animator.SetBool("IsSliding", false);
+        }
+
+        // 떨어질 때 점프 애니메이션 끄기
+        if (playrigidboody.velocity.y <= 0)
         {
             animator.SetBool("IsJump", false);
         }
@@ -35,13 +46,9 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // 바닥에 닿았을 때 점프 카운트 초기화
         if (collision.gameObject.CompareTag("Ground"))
         {
             currentJumpCount = 0;
         }
     }
 }
-
-
-

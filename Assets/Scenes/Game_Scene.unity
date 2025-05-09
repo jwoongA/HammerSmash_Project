@@ -157,6 +157,7 @@ Transform:
   m_Children:
   - {fileID: 1362533071}
   - {fileID: 666327274}
+  - {fileID: 1797511962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &199584605
@@ -5447,7 +5448,7 @@ Transform:
   m_GameObject: {fileID: 1362533070}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.074, y: 0.161, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5763,7 +5764,7 @@ GameObject:
   - component: {fileID: 1797511961}
   - component: {fileID: 1797511963}
   m_Layer: 0
-  m_Name: tile_0117 (1)
+  m_Name: OHamma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5830,11 +5831,11 @@ Transform:
   m_GameObject: {fileID: 1797511960}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.32971323, w: 0.9440811}
-  m_LocalPosition: {x: 0.868, y: 0.054, z: 0}
+  m_LocalPosition: {x: 0.868, y: -0.396, z: 0}
   m_LocalScale: {x: 10, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 199584604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.503}
 --- !u!95 &1797511963
 Animator:
@@ -5864,6 +5865,5 @@ SceneRoots:
   - {fileID: 472216016}
   - {fileID: 1063317836}
   - {fileID: 199584604}
-  - {fileID: 1797511962}
   - {fileID: 636037080}
   - {fileID: 1632357287}
