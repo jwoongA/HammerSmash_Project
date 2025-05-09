@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2801767027711556090}
   - component: {fileID: 2149093659210586411}
   - component: {fileID: 7479176160329355589}
+  - component: {fileID: -7187809837841946736}
   m_Layer: 0
   m_Name: LargeHealPotion
   m_TagString: Untagged
@@ -175,3 +176,15 @@ PolygonCollider2D:
       - {x: 0.37, y: 0.39999998}
       - {x: 0.32, y: 0.44}
   m_UseDelaunayMesh: 0
+--- !u!114 &-7187809837841946736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086332132999768971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601987cdbb1a9224d8e75d8207a273d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

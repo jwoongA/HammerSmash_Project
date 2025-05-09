@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8245977451653308586}
   - component: {fileID: 5887545310246890581}
   - component: {fileID: 7382033880510627098}
+  - component: {fileID: -7105430683302473390}
   m_Layer: 0
   m_Name: Magnat
   m_TagString: Untagged
@@ -171,3 +172,15 @@ PolygonCollider2D:
       - {x: 0.32, y: 0.32}
       - {x: 0.25, y: 0.42999998}
   m_UseDelaunayMesh: 0
+--- !u!114 &-7105430683302473390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480976544295837612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601987cdbb1a9224d8e75d8207a273d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

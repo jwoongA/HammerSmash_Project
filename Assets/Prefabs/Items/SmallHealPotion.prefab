@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8225351941892296675}
   - component: {fileID: 8614031307050888787}
   - component: {fileID: 6192761986810431720}
+  - component: {fileID: -5684088700393313037}
   m_Layer: 0
   m_Name: SmallHealPotion
   m_TagString: Untagged
@@ -158,3 +159,15 @@ PolygonCollider2D:
       - {x: 0.18042317, y: 0.1718998}
       - {x: 0.15064764, y: 0.21268997}
   m_UseDelaunayMesh: 0
+--- !u!114 &-5684088700393313037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047324219012213861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601987cdbb1a9224d8e75d8207a273d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
