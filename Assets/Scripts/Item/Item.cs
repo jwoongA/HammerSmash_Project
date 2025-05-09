@@ -11,7 +11,8 @@ public class Item : MonoBehaviour
         SmallHeal,
         LargeHeal,
         FastRun,
-        HammerTime
+        HammerTime,
+        Coin
     }
 
     public ItemType itemType;
@@ -19,6 +20,7 @@ public class Item : MonoBehaviour
     // 임시 테스트용
     private static int tempHP = 50;
     private const int maxHP = 100;
+    public GameObject scrollTarget;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -47,7 +49,7 @@ public class Item : MonoBehaviour
                 break;
                 case ItemType.FastRun:
                 Debug.Log("속도 증가");
-                // 속도 증가 2배, 2.2초동안 지속
+                // 속도 증가 2배, 2.2초동안 지속               
                 break;
             case ItemType.HammerTime:
                 Debug.Log("망치 나가신다!");
@@ -68,4 +70,18 @@ public class Item : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    // 속도 증가 매커니즘
+    //private IEnumerator FastRunBoost()
+    //{
+    //    var scroll = scrollTarget.GetComponent<StageScroller>();
+    //    if (scroll != null)
+    //    {
+    //        scroll.scrollSpeed *= 2f;
+    //        Debug.Log("속도 2배 증가");
+    //        yield return new WaitForSeconds(2.2f);
+    //        scroll.scrollSpeed /= 2f;
+    //        Debug.Log("속도 2배 증가 끝");
+    //    }
+    //}
 }
