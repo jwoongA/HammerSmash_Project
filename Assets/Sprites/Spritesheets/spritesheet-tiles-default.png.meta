@@ -178,7 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_BOT
+      name: Obstacle_BOT(0)
       rect:
         serializedVersion: 2
         x: 12
@@ -220,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Hole
+      name: Obstacle_DeepHole
       rect:
         serializedVersion: 2
         x: 1
@@ -240,6 +240,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Obstacle_LowHole
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 897
+        width: 62
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fdd4047001cbf4195ee0bbbdb91cf0
+      internalID: -516252273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_BOT(1)
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 640
+        width: 40
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70a967490e3d5e4e8f33b6f2037b5db
+      internalID: 1663329010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_BOT(2)
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 576
+        width: 40
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3ceec591bfaad428594ae01df49aa7
+      internalID: 1672486645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_LowHole-fire
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 448
+        width: 62
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df360b775c9993459b666bf18bea928
+      internalID: -1727158498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_DeepHole-fire
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 321
+        width: 62
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d3b5f4d21dbe946b7a2e174690b7ff
+      internalID: -1463091402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -251,8 +356,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Obstacle_BOT: 162027268
-      Obstacle_Hole: -78029708
+      Obstacle_BOT(0): 162027268
+      Obstacle_BOT(1): 1663329010
+      Obstacle_BOT(2): 1672486645
+      Obstacle_DeepHole: -78029708
+      Obstacle_DeepHole-fire: -1463091402
+      Obstacle_LowHole: -516252273
+      Obstacle_LowHole-fire: -1727158498
       Obstacle_TOP: 629811398
       spritesheet-tiles-default_0: 555826928
       spritesheet-tiles-default_1: -1523330093
