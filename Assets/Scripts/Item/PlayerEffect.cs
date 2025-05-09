@@ -9,11 +9,12 @@ public class PlayerEffect : MonoBehaviour
     public int currentHP = 120;
 
     // 상태 효과
-    public bool isInvincible = false;
-    public bool isMagnetActive = false;
+    public bool isInvincible = false;   // 무적 효과
+    public bool isMagnetActive = false;    // 자석 효과
+    public bool ignoreHole = false;    // 구멍 무시 효과
 
-    // 맵 배경 제어
-    
+    // 투명 플랫폼
+    public GameObject invisiblePlatform;
 
     // 아이템 종류에 따라 효과를 분기 처리
     public void ApplyItemEffect(Item.ItemType type)
@@ -33,12 +34,11 @@ public class PlayerEffect : MonoBehaviour
                 StartCoroutine(MagnetEffect(2.8f));    // 2.8초 자석효과
                 break;
             case Item.ItemType.FastRun:
-                // 속도 2배 증가, 2.2초 지속
+                StartCoroutine(SpeedBoost(2.2f));   // 2.2초 질주효과
                 break;
-
-            // 추가해야 할 아이템
-            // 질주
-            // 코인
+            case Item.ItemType.Coin:
+                // 점수 추가
+                break;
         }
     }
 
@@ -93,5 +93,22 @@ public class PlayerEffect : MonoBehaviour
     }
 
     // 속도 증가 코루틴
-    
+    private IEnumerator SpeedBoost(float duration)
+    {
+        ObstacleMover.globalSpeedMultiplier = 2f;
+        isInvincible = true;
+        ignoreHole = true;
+        if (invisiblePlatform != null)
+            invisiblePlatform.SetActive(true);
+        Debug.Log("질주 시작");
+
+        yield return new WaitForSeconds(duration);
+
+        ObstacleMover.globalSpeedMultiplier = 1f;
+        isInvincible = false;
+        ignoreHole = false;
+        if (invisiblePlatform != null)
+            invisiblePlatform.SetActive(false);                           
+        Debug.Log("질주 끝");
+    }
 }

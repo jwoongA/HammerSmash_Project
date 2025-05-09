@@ -387,6 +387,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Coin_1
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 588
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c3e0e5c551a924c93ecef48c46516e
+      internalID: -16866599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_2
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 652
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965199aab31906f41acb521f4b5d6132
+      internalID: 139531135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -399,6 +441,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       : 2877471580529523173
+      Coin_1: -16866599
+      Coin_2: 139531135
       Obstacle_BOT(0): -982937588648496324
       Obstacle_BOT(1): -5591808920267284257
       Obstacle_BOT(2): -1224184441499235401
