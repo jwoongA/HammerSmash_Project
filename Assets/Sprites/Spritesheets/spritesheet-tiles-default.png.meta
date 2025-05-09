@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -172,7 +172,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e7077c32c13abc747bb13a4cb094afab
-      internalID: -703175350
+      internalID: -2808014073550543062
       vertices: []
       indices: 
       edges: []
@@ -193,7 +193,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a3181b42a2fad2b448550008f15ff16c
-      internalID: -930288813
+      internalID: -4663983427527070357
       vertices: []
       indices: 
       edges: []
@@ -207,14 +207,182 @@ TextureImporter:
         width: 65
         height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: e82e5e2ffeebbf04da6da2b74cdc2d78
-      internalID: -896828980
+      internalID: -8361174296143886262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_BOT(0)
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 704
+        width: 40
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d19e74e4da21a64187594a60aaf8d18
+      internalID: -982937588648496324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_TOP
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 961
+        width: 60
+        height: 62
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d45b6d7f099814b872466c11036baa
+      internalID: 2398883033561569181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_DeepHole
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 769
+        width: 62
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97f6161e0533d140b22c64763a6d65e
+      internalID: 3851216765263689521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_LowHole
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 897
+        width: 62
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fdd4047001cbf4195ee0bbbdb91cf0
+      internalID: 8519542261298990612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_BOT(1)
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 640
+        width: 40
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70a967490e3d5e4e8f33b6f2037b5db
+      internalID: -5591808920267284257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_BOT(2)
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 576
+        width: 40
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3ceec591bfaad428594ae01df49aa7
+      internalID: -1224184441499235401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_LowHole-fire
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 448
+        width: 62
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df360b775c9993459b666bf18bea928
+      internalID: -8707952429740674066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_DeepHole-fire
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 321
+        width: 62
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d3b5f4d21dbe946b7a2e174690b7ff
+      internalID: 8931507002786837542
       vertices: []
       indices: 
       edges: []
@@ -231,9 +399,17 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       : 2877471580529523173
-      spritesheet-tiles-default_0: -703175350
-      spritesheet-tiles-default_1: -930288813
-      spritesheet-tiles-default_2: -896828980
+      Obstacle_BOT(0): -982937588648496324
+      Obstacle_BOT(1): -5591808920267284257
+      Obstacle_BOT(2): -1224184441499235401
+      Obstacle_DeepHole: 3851216765263689521
+      Obstacle_DeepHole-fire: 8931507002786837542
+      Obstacle_LowHole: 8519542261298990612
+      Obstacle_LowHole-fire: -8707952429740674066
+      Obstacle_TOP: 2398883033561569181
+      spritesheet-tiles-default_0: -2808014073550543062
+      spritesheet-tiles-default_1: -4663983427527070357
+      spritesheet-tiles-default_2: -8361174296143886262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

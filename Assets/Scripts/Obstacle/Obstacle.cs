@@ -8,7 +8,7 @@ public enum ObstacleType
     Overhead,      // 상단 장애물 (슬라이딩으로 피하기)
     Ground,        // 하단 장애물 (점프해서 피하기)
     FallHole,      // 떨어지는 구멍 장애물 (점프해서 피하기)
-    Destructible   // 망치로 부술 수 있는 장애물
+
 }
 
 namespace runner
@@ -34,7 +34,7 @@ namespace runner
         [Header("피격 관련 설정")]
         [SerializeField] private float damage = 10f;
 
-        private int spawnIndex = 0; //장애물 고정위치 인덱스
+        [SerializeField] private int spawnIndex = 0; //장애물 고정위치 인덱스
 
         void Start()
         {
@@ -80,12 +80,32 @@ namespace runner
                     transform.localScale = new Vector3(holeWidth, 1, 1);
                     break;
 
-                case ObstacleType.Destructible:
-                    // 기본 높이로 배치, 플레이어가 부수는 대상
-                    transform.position = new Vector3(transform.position.x, 0f, 0);
-                    transform.localScale = new Vector3(1, 1, 1);
-                    break;
             }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                //Player player = other.GetComponent<Player>();
+                //if (player != null)
+                //{
+                //        player.OnHit(damage); //플레이어에게 데미지
+
+                //    //플레이어가 망치 아이템 사용 중이면 장애물 파괴
+                //    if (player.hasHammer)
+                //    {
+                //        Destroy(gameObject); //장애물 파괴
+                //        return;
+                //    }
+                //}
+            }
+        }
+
+
+        public void SetSpawnIndex(int index)
+        {
+            spawnIndex = index;
         }
 
     }
