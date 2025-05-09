@@ -19,10 +19,10 @@ namespace runner
         public ObstacleType obstacleType;
 
         [Header("장애물 속성 조절")]
-        [SerializeField] private float minHeight = 1f; //장애물 최소 높이
-        [SerializeField] private float maxHeight = 3f; //장애물 최대 높이
-        [SerializeField] private float minWidth = 1f; //장애물 최소 너비
-        [SerializeField] private float maxWidth = 3f; //장애물 최대 너비
+        [SerializeField] private float minHeight = 1.2f; //장애물 최소 높이
+        [SerializeField] private float maxHeight = 2.0f; //장애물 최대 높이
+        [SerializeField] private float minWidth = 1.0f; //장애물 최소 너비
+        [SerializeField] private float maxWidth = 2.0f; //장애물 최대 너비
 
         [Tooltip("장애물 간 간격 범위")]
         [SerializeField] private float minSpacing = 2f; //장애물 최소 간격
