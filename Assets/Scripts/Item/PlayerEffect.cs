@@ -12,6 +12,9 @@ public class PlayerEffect : MonoBehaviour
     public bool isInvincible = false;
     public bool isMagnetActive = false;
 
+    // 맵 배경 제어
+    
+
     // 아이템 종류에 따라 효과를 분기 처리
     public void ApplyItemEffect(Item.ItemType type)
     {
@@ -27,8 +30,12 @@ public class PlayerEffect : MonoBehaviour
                 StartCoroutine(Invincibility(3.4f));    // 3.4초 무적(망치 나가신다!)
                 break;
             case Item.ItemType.Magnet:
-                StartCoroutine(MagnetEffect(2.8f));
+                StartCoroutine(MagnetEffect(2.8f));    // 2.8초 자석효과
                 break;
+            case Item.ItemType.FastRun:
+                // 속도 2배 증가, 2.2초 지속
+                break;
+
             // 추가해야 할 아이템
             // 질주
             // 코인
@@ -56,6 +63,23 @@ public class PlayerEffect : MonoBehaviour
         Debug.Log("무적 종료");
     }
 
+    // 장애물에 적어야 되는 부분 무적 처리
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        var effect = other.GetComponent<PlayerEffect>();
+    //        if (effect != null && effect.isInvincible)
+    //        {
+    //            Destroy(gameObject); // 장애물 파괴
+    //            return;
+    //        }
+
+    //        // 일반 피격 처리
+    //        Debug.Log("플레이어가 장애물에 닿음!");
+    //    }
+    //}
+
     // 자석 효과 코루틴
     private IEnumerator MagnetEffect(float duration)
     {
@@ -67,4 +91,7 @@ public class PlayerEffect : MonoBehaviour
         isMagnetActive = false;
         Debug.Log("자석 효과 끝");
     }
+
+    // 속도 증가 코루틴
+    
 }
