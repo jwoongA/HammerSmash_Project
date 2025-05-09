@@ -16,28 +16,34 @@ public class Item : MonoBehaviour
 
     public ItemType itemType;
 
+    // 임시 테스트용
+    private static int tempHP = 50;
+    private const int maxHP = 100;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         // player.cs 가 생기면 고쳐야 할 부분
         if (!other.CompareTag("Player")) return;
-        {
+        
             // 추후 구현 예정
             //Player player = other.GetComponent<Player>();
             //if (player != null)
             //{
             //    player.ApplyItemEffect(itemType);
             //}
-        }
+        
 
         switch (itemType)
         {
             case ItemType.SmallHeal:
                 Debug.Log("소형 체력 물약");
                 // 체력 회복 시스템 구현, 10회복
+                tempHP += 10;
                 break;
                 case ItemType.LargeHeal:
                 Debug.Log("대형 체력 물약");
                 // 체력 회복 시스템 구현, 40회복
+                tempHP += 40;
                 break;
                 case ItemType.FastRun:
                 Debug.Log("속도 증가");
@@ -54,6 +60,11 @@ public class Item : MonoBehaviour
             default:
                 break;
         }
+
+        // 최대 체력은 넘기지 못하게
+        tempHP = Mathf.Min(tempHP, maxHP);
+
+        Debug.Log($"테스트 아이템 {itemType} 획득");
 
         Destroy(gameObject);
     }
