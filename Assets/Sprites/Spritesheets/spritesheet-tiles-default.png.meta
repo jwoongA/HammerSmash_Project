@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -136,127 +136,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Road
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 961
-        width: 65
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52d0243e880821f45a3131ac0363315a
-      internalID: 1054773760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet-tiles-default_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 897
-        width: 67
-        height: 62
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b83c0443b2280c41a2e07f4390cb1c9
-      internalID: 2142744805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet-tiles-default_2
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 391
-        width: 55
-        height: 183
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 896aba43efc9e5c45b058a801eb4e19d
-      internalID: -1276166242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet-tiles-default_3
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 639
-        width: 42
-        height: 68
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c98b0f2937252d4e9ef4b38f953949d
-      internalID: -1191103285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet-tiles-default_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 511
-        width: 62
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 334608d2b4441f147ac1f00bb7052aa8
-      internalID: 2052256372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RightEnd
+      name: 
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 62
-        height: 61
+        y: 0
+        width: 0
+        height: 0
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f957082458489aa42b4fa14e8607d13c
-      internalID: 1202828244
+      spriteID: 5e97eb03825dee720800000000000000
+      internalID: 2877471580529523173
       vertices: []
       indices: 
       edges: []
@@ -264,7 +159,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -272,12 +167,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RightEnd: 1202828244
-      Road: 1054773760
-      spritesheet-tiles-default_1: 2142744805
-      spritesheet-tiles-default_2: -1276166242
-      spritesheet-tiles-default_3: -1191103285
-      spritesheet-tiles-default_4: 2052256372
+      : 2877471580529523173
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
