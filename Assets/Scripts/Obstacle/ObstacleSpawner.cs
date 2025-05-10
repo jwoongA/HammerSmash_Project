@@ -19,11 +19,18 @@ namespace runner
 
             InvokeRepeating("SpawnObstaclesPeriodically", 1f, 5f);
         }
-      
-            
-        void SpawnObstaclesForStage()
+
+        void SpawnObstaclesPeriodically()
         {
+            // 현재 스테이지에 맞게 장애물을 생성
             SpawnObstaclesForStage(currentStage);
+
+            // 스테이지 증가 (예: 1씩 증가시켜 다음 스테이지로 넘어감)
+            currentStage++;
+            if (currentStage >= obstaclePrefabs.Length) // 스테이지가 더 이상 없다면 다시 처음으로
+            {
+                currentStage = 0;
+            }
         }
 
         public void SpawnObstaclesForStage(int stageNum)

@@ -172,7 +172,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 0
+  minHeight: 1.2
+  maxHeight: 2
+  minWidth: 1
+  maxWidth: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
   damage: 10
+  spawnIndex: 0
 --- !u!1 &2206083997718858879
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +353,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 0
+  minHeight: 1.2
+  maxHeight: 2
+  minWidth: 1
+  maxWidth: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
   damage: 10
+  spawnIndex: 0
 --- !u!1 &2214787734370325639
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +408,8 @@ GameObject:
   - component: {fileID: 8671207455263680064}
   - component: {fileID: 6350235944571223623}
   - component: {fileID: 2197987797484744759}
+  - component: {fileID: 1417640430627217852}
+  - component: {fileID: 341381109975293135}
   m_Layer: 6
   m_Name: Obstacle_GroundFireTest (2)
   m_TagString: Obstacle
@@ -511,6 +529,55 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5690441, y: 0.904736}
   m_EdgeRadius: 0
+--- !u!50 &1417640430627217852
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782600101599935916}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &341381109975293135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782600101599935916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfff57466b8ed314e90a9786196eeab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 1
+  minHeight: 1.2
+  maxHeight: 2
+  minWidth: 1
+  maxWidth: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
+  damage: 10
+  spawnIndex: 0
 --- !u!1 &4721669363077168317
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +589,8 @@ GameObject:
   - component: {fileID: 7172846632112353270}
   - component: {fileID: 6625107048211103445}
   - component: {fileID: 8371960966947633416}
+  - component: {fileID: 1117857981742271417}
+  - component: {fileID: 994835592718079542}
   m_Layer: 6
   m_Name: Obstacle_GroundFireTest
   m_TagString: Obstacle
@@ -641,6 +710,55 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5690441, y: 0.904736}
   m_EdgeRadius: 0
+--- !u!50 &1117857981742271417
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4721669363077168317}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &994835592718079542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4721669363077168317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfff57466b8ed314e90a9786196eeab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 1
+  minHeight: 1.2
+  maxHeight: 2
+  minWidth: 1
+  maxWidth: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
+  damage: 10
+  spawnIndex: 0
 --- !u!1 &5126590934127655149
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +770,8 @@ GameObject:
   - component: {fileID: 8987486016872337740}
   - component: {fileID: 5675966508007453074}
   - component: {fileID: 6445166219104682964}
+  - component: {fileID: 2809894616146592747}
+  - component: {fileID: 1412666208675831241}
   m_Layer: 6
   m_Name: Obstacle_GroundFireTest (1)
   m_TagString: Obstacle
@@ -771,6 +891,55 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5690441, y: 0.904736}
   m_EdgeRadius: 0
+--- !u!50 &2809894616146592747
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126590934127655149}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1412666208675831241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126590934127655149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfff57466b8ed314e90a9786196eeab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 1
+  minHeight: 1.2
+  maxHeight: 2
+  minWidth: 1
+  maxWidth: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
+  damage: 10
+  spawnIndex: 0
 --- !u!1 &5142500271565477109
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,7 +949,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4096612882001161234}
-  - component: {fileID: 3641021379770621770}
   m_Layer: 6
   m_Name: Obstacle_Ground3touch
   m_TagString: Obstacle
@@ -806,33 +974,6 @@ Transform:
   - {fileID: 8671207455263680064}
   m_Father: {fileID: 7276724665583384896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &3641021379770621770
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5142500271565477109}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 6
 --- !u!1 &7971427765151182638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,4 +1146,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 0
+  minHeight: 1.2
+  maxHeight: 2
+  minWidth: 1
+  maxWidth: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
   damage: 10
+  spawnIndex: 0

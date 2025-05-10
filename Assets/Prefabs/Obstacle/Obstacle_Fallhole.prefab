@@ -98,7 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
   damage: 10
+  spawnIndex: 0
 --- !u!1 &1366487896098704504
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +201,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
   damage: 10
+  spawnIndex: 0
 --- !u!1 &6000285248123004608
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +339,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
   damage: 10
+  spawnIndex: 0
 --- !u!1 &7194027197388265614
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,4 +442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 2
+  minSpacing: 2
+  maxSpacing: 10
+  fixedPositions: []
   damage: 10
+  spawnIndex: 0
