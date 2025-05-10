@@ -16,6 +16,13 @@ namespace runner
 
         void Start()
         {
+
+            InvokeRepeating("SpawnObstaclesPeriodically", 1f, 5f);
+        }
+      
+            
+        void SpawnObstaclesForStage()
+        {
             SpawnObstaclesForStage(currentStage);
         }
 
