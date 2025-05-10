@@ -18,11 +18,6 @@ namespace runner
         [Header("장애물 종류")]
         public ObstacleType obstacleType;
 
-        [Header("장애물 속성 조절")]
-        [SerializeField] private float minHeight = 1f; //장애물 최소 높이
-        [SerializeField] private float maxHeight = 3f; //장애물 최대 높이
-        [SerializeField] private float minWidth = 1f; //장애물 최소 너비
-        [SerializeField] private float maxWidth = 3f; //장애물 최대 너비
 
         [Tooltip("장애물 간 간격 범위")]
         [SerializeField] private float minSpacing = 2f; //장애물 최소 간격
@@ -58,29 +53,6 @@ namespace runner
             if (spawnIndex < fixedPositions.Length)
                 transform.position = fixedPositions[spawnIndex];
 
-            // 장애물 종류에 따라 위치/크기 다르게 설정
-            switch (obstacleType)
-            {
-                case ObstacleType.Overhead:
-                    // 화면 위쪽에 고정된 높이로 배치
-                    transform.position = new Vector3(transform.position.x, 3f, 0);
-                    transform.localScale = new Vector3(1, Random.Range(minHeight, maxHeight), 1);
-                    break;
-
-                case ObstacleType.Ground:
-                    // 바닥에 붙어 있는 장애물
-                    transform.position = new Vector3(transform.position.x, 0f, 0);
-                    transform.localScale = new Vector3(1, Random.Range(minHeight, maxHeight), 1);
-                    break;
-
-                case ObstacleType.FallHole:
-                    // 땅이 없는 구간 (너비만 조절)
-                    transform.position = new Vector3(transform.position.x, 0f, 0);
-                    float holeWidth = Random.Range(minWidth, maxWidth);
-                    transform.localScale = new Vector3(holeWidth, 1, 1);
-                    break;
-
-            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
