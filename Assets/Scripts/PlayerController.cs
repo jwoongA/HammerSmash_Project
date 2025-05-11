@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public float jumpForce = 5f;
     private Rigidbody2D Playerrigidbody;
+=======
+    public float jumpForce = 5f; //점프력
+    private Rigidbody2D playrigidboody; 
+>>>>>>> Stashed changes
     private Animator animator;
 
-    public int maxJumpCount = 2;
+    public int maxJumpCount = 2; //최대 점프 횟수
     private int currentJumpCount = 0;
 
     void Start()
