@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    public float jumpForce = 5f;
-    private Rigidbody2D Playerrigidbody;
-=======
+
     public float jumpForce = 5f; //점프력
-    private Rigidbody2D playrigidboody; 
->>>>>>> Stashed changes
+    private Rigidbody2D Playerrigidbody; 
     private Animator animator;
 
     public int maxJumpCount = 2; //최대 점프 횟수
@@ -23,15 +19,16 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        // 점프
-        if (Input.GetKeyDown(KeyCode.Z) && currentJumpCount < maxJumpCount && !Input.GetKey(KeyCode.X))
+        //점프
+        if (Input.GetKeyDown(KeyCode.Z) && currentJumpCount < maxJumpCount)
         {
             Playerrigidbody.velocity = new Vector2(Playerrigidbody.velocity.x, jumpForce);
             animator.SetBool("IsJump", true);
+            animator.SetBool("IsSliding", false); 
             currentJumpCount++;
         }
-        // 슬라이딩 (X키 누르고 있을 때)
-        if (Input.GetKey(KeyCode.X))
+        //슬라이딩
+        else if (Input.GetKey(KeyCode.X))
         {
             animator.SetBool("IsSliding", true);
         }
@@ -39,25 +36,21 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsSliding", false);
         }
-
-        // 떨어질 때 점프 애니메이션 끄기
-        if (Playerrigidbody.velocity.y <= 0)
-        {
-            animator.SetBool("IsJump", false);
-        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //'그라운드' 태그와 부딫히면 점프횟수 초기화 및 점프 애니메이션 초기화
         if (collision.gameObject.CompareTag("Ground"))
         {
             currentJumpCount = 0;
+            animator.SetBool("IsJump", false); 
         }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Item"))
         {
-            Destroy(other.gameObject); // 태그에'아이템'이 붙어있는 오브젝트와 충돌하면 충돌한 아이템이 사라짐
+            Destroy(other.gameObject); //'아이템'태그와 부딫히면 아이템 사라짐(먹은것처럼 표현)
         }
     }
 }
