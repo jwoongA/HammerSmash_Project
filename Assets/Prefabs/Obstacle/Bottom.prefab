@@ -808,7 +808,7 @@ Transform:
   m_GameObject: {fileID: 5673804216437217009}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.98, z: 0}
+  m_LocalPosition: {x: 0, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -850,13 +850,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 1
-  minHeight: 1
-  maxHeight: 3
-  minWidth: 1
-  maxWidth: 3
   minSpacing: 2
   maxSpacing: 10
-  fixedPositions: []
   damage: 10
   spawnIndex: 0
 --- !u!61 &471800610674059138
