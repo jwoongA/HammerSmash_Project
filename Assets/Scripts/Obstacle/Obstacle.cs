@@ -82,27 +82,18 @@ namespace runner
 
             }
         }
-
-        private void OnTriggerEnter2D(Collider2D other)
+         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
-                //Player player = other.GetComponent<Player>();
-                //if (player != null)
-                //{
-                //        player.OnHit(damage); //플레이어에게 데미지
-
-                //    //플레이어가 망치 아이템 사용 중이면 장애물 파괴
-                //    if (player.hasHammer)
-                //    {
-                //        Destroy(gameObject); //장애물 파괴
-                //        return;
-                //    }
-                //}
+                var effect = other.GetComponent<PlayerEffect>();
+                if (effect != null && effect.isInvincible)
+                {
+                    Destroy(gameObject); // 장애물 파괴
+                    return;
+                }
             }
         }
-
-
         public void SetSpawnIndex(int index)
         {
             spawnIndex = index;

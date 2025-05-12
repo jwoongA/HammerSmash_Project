@@ -57,18 +57,6 @@ public class PlayerEffect : MonoBehaviour
         isInvincible = false;
         Debug.Log("무적 종료");
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            var effect = other.GetComponent<PlayerEffect>();
-            if (effect != null && effect.isInvincible)
-            {
-                Destroy(gameObject); // 장애물 파괴
-                return;
-            }
-        }
-    }
     // 자석 효과 코루틴
     private IEnumerator MagnetEffect(float duration)
     {
