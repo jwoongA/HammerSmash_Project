@@ -27,7 +27,8 @@ public class RoadSpawner : MonoBehaviour
 
         float tileWidth = GetTileWidth(newTile);
 
-        
+        Destroy(newTile, 10f);
+
         spawnPoint.position += new Vector3(tileWidth, 0f, 0f);
     }
 
