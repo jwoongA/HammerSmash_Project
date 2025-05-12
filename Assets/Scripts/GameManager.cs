@@ -1,22 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace runner
 {
 
     public class GameManager : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        public static GameManager Instance;
 
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
-        // Update is called once per frame
-        void Update()
+        public void GameOver()
         {
-
+            Debug.Log("게임 오버!");
+            // 예: 현재 씬을 다시 로드 (리트라이)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
