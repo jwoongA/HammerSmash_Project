@@ -17,8 +17,8 @@ namespace runner
 
         void Start()
         {
-            // 게임 시작 시 첫 스테이지 스폰
-            obstacleSpawner.SpawnObstaclesForStage(currentStage);
+            currentStage = 0;
+            ApplyStageSettings(currentStage);
         }
 
         void Update()
@@ -30,9 +30,17 @@ namespace runner
                 currentStage++;
                 stageTimer = 0f;
 
-                // 다음 스테이지 장애물 스폰
-                obstacleSpawner.SpawnObstaclesForStage(currentStage);
+                ApplyStageSettings(currentStage);
             }
+        }
+
+        void ApplyStageSettings(int stage)
+        {
+            // 예: 스테이지가 올라갈수록 빠르게, 최소 간격 0.5초
+            float newInterval = Mathf.Max(0.5f, 2f - 0.3f * stage);
+            float newSpeed = Mathf.Min(10f, 5f + stage); // 속도는 최대 10까지 증가
+
+            obstacleSpawner.SetStageParameters(newInterval, newSpeed);
         }
     }
 }

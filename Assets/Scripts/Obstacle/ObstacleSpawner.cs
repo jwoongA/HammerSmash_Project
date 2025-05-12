@@ -6,36 +6,78 @@ namespace runner
 {
     public class ObstacleSpawner : MonoBehaviour
     {
-        [Header("장애물 프리팹들")]
-        public GameObject[] obstaclePrefabs;
+        [Header("장애물 프리팹들 (순서 중요)")]
+        public GameObject[] obstaclePrefabs; //Overhead, Ground, Fallhole 순서
 
-        [Header("장애물 생성 위치")]
-        public Vector3[] spawnPositions;
+        [Header("장애물 생성 위치 (순서 중요)")]
+        public Transform[] spawnPositions; //개별 스폰포인트 연결
 
-        private int currentStage = 0; //스테이지 확장 인덱스
+        [Header("생성 간격 & 이동 속도")]
+        public float spawnInterval = 2f;
+        public float obstacleSpeed = 5f;
+
+        [Header("장애물 부모 컨테이너")]
+        public Transform obstacleContainer;
+
+        private int spawnIndex = 0;
 
         void Start()
         {
-            SpawnObstaclesForStage(currentStage);
+            spawnIndex = 0;
+            InvokeRepeating(nameof(SpawnObstacle), 0f, spawnInterval);
         }
 
-        public void SpawnObstaclesForStage(int stageNum)
+        void Update()
         {
-            for (int i = 0; i < spawnPositions.Length; i++)
+            CleanUpObstacles();
+        }
+
+        void SpawnObstacle()
+        {
+            if (spawnIndex >= obstaclePrefabs.Length || spawnIndex >= spawnPositions.Length)
             {
-                //장애물 타입을 자동으로 순서대로 바뀜
-                ObstacleType type = (ObstacleType)(i % System.Enum.GetNames(typeof(ObstacleType)).Length);
+                spawnIndex = 0; //반복을 위한 인덱스 리셋
+            }
 
-                GameObject prefab = obstaclePrefabs[(int)type]; //장애물 타입에 맞는 프리팹 선택
-                GameObject obj = Instantiate(prefab, spawnPositions[i], Quaternion.identity); //지정된 위치에 장애물 생성
+            GameObject prefab = obstaclePrefabs[spawnIndex];
+            Transform spawnPoint = spawnPositions[spawnIndex];
 
-                Obstacle obstacle = obj.GetComponent<Obstacle>(); 
-                if (obstacle != null)
+            if (prefab == null || spawnPoint == null) return;
+
+            GameObject obstacle = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+            obstacle.transform.SetParent(obstacleContainer); //컨테이너 하위로 배치
+
+            spawnIndex++;
+        }
+
+        void CleanUpObstacles()
+        {
+            List<Transform> toRemove = new List<Transform>();
+
+            foreach (Transform child in obstacleContainer)
+            {
+                if (child.position.x < -20f)
                 {
-                    obstacle.obstacleType = type; //장애물 타입 설정
-                    obstacle.SetSpawnIndex(i); //몇번째 장애물인지 설정
+                    toRemove.Add(child);
+                }
+                else
+                {
+                    child.Translate(Vector3.left * obstacleSpeed * Time.deltaTime);
                 }
             }
+
+            foreach (Transform obstacle in toRemove)
+            {
+                Destroy(obstacle.gameObject);
+            }
+        }
+
+        public void SetStageParameters(float interval, float speed)
+        {
+            CancelInvoke(nameof(SpawnObstacle));
+            spawnInterval = interval;
+            obstacleSpeed = speed;
+            InvokeRepeating(nameof(SpawnObstacle), 0f, spawnInterval);
         }
     }
 }

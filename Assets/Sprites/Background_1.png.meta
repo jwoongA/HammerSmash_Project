@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ef187065d256754dbb8858456338919
+guid: 38c4cdfc15426e143b3fa562f935a28d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,70 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Obstacle_Overhead-mob(2)
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 448
-        width: 51
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: add5c92ac0618aa4ebb7576274c22e40
-      internalID: -1531924833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Obstacle_Overhead-mob
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 320
-        width: 51
-        height: 54
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2060aaf408c3ad4c8a6a837fc588291
-      internalID: -945537739
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Obstacle_Overhead-mob(1)
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 384
-        width: 51
-        height: 59
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92e2feef75f7a0440a10f279649cb701
-      internalID: -1553675916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -208,10 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Obstacle_Overhead-mob: -945537739
-      Obstacle_Overhead-mob(1): -1553675916
-      Obstacle_Overhead-mob(2): -1531924833
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
