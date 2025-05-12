@@ -5,21 +5,39 @@ using UnityEngine;
 public class RoadSpawner : MonoBehaviour
 {
     public GameObject tilePrefab;       
-    public Transform spawnPoint;        
-    public float spawnInterval = 2f;   
+    public Transform spawnPoint;
 
+
+    [Header("스폰 간격 조절")]
+    public float initialSpawnInterval = 1.5f;    // 초기 간격
+    public float minSpawnInterval = 0.5f;        // 최소 간격
+    public float intervalDecreaseDuration = 30f; // 몇 초 동안 간격을 줄일지
+
+    private float currentSpawnInterval;
     private float timer = 0f;
+    private float elapsedTime = 0f;
+
+    void Start()
+    {
+        currentSpawnInterval = initialSpawnInterval;
+    }
 
     void Update()
     {
+        elapsedTime += Time.deltaTime;
         timer += Time.deltaTime;
 
-        if (timer >= spawnInterval)
+       
+        float t = Mathf.Clamp01(elapsedTime / intervalDecreaseDuration);
+        currentSpawnInterval = Mathf.Lerp(initialSpawnInterval, minSpawnInterval, t);
+
+        if (timer >= currentSpawnInterval)
         {
             SpawnTile();
             timer = 0f;
         }
     }
+
 
     void SpawnTile()
     {
@@ -27,7 +45,8 @@ public class RoadSpawner : MonoBehaviour
 
         float tileWidth = GetTileWidth(newTile);
 
-        
+        Destroy(newTile, 10f);
+
         spawnPoint.position += new Vector3(tileWidth, 0f, 0f);
     }
 

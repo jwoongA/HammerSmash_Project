@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -396,7 +396,7 @@ TextureImporter:
         width: 37
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -417,7 +417,7 @@ TextureImporter:
         width: 20
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -425,6 +425,153 @@ TextureImporter:
       bones: []
       spriteID: 965199aab31906f41acb521f4b5d6132
       internalID: 139531135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage2_tile(1)
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 960
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e115675ecd3c74345ac6b64c8ad3811c
+      internalID: 173397475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage2_tile(2)
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e17a147ddb29c140a000c479da151c5
+      internalID: 2024585682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage2_tile(3)
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 832
+        width: 64
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8267a1fff1555428cc91c95a070999
+      internalID: -651427076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage2_tile(4)
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99fce62340d11e04cb0cddafd2fec0b0
+      internalID: -1954900208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage2_tile(5)
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 578
+        width: 58
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ad93593d84fe74e9c4ee80b317d52d
+      internalID: -1525550174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage2_tile(6)
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 388
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88083841b1323d949824cddcec631b22
+      internalID: 1780591112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage2_tile(7)
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 257
+        width: 64
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3bc841ce0a4fe43a7591fdc1ec4203
+      internalID: -1829237596
       vertices: []
       indices: 
       edges: []
@@ -451,6 +598,13 @@ TextureImporter:
       Obstacle_LowHole: 8519542261298990612
       Obstacle_LowHole-fire: -8707952429740674066
       Obstacle_TOP: 2398883033561569181
+      Stage2_tile(1): 173397475
+      Stage2_tile(2): 2024585682
+      Stage2_tile(3): -651427076
+      Stage2_tile(4): -1954900208
+      Stage2_tile(5): -1525550174
+      Stage2_tile(6): 1780591112
+      Stage2_tile(7): -1829237596
       spritesheet-tiles-default_0: -2808014073550543062
       spritesheet-tiles-default_1: -4663983427527070357
       spritesheet-tiles-default_2: -8361174296143886262
