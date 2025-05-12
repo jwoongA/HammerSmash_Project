@@ -59,7 +59,7 @@ public class PlayerStatus : MonoBehaviour
     //}
     void Die()
     {
-        Debug.Log("사망시UI 재생예정");
+        //Debug.Log("사망시UI 재생예정");
     }
 }
 

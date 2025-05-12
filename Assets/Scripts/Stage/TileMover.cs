@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileMover : MonoBehaviour
 {
-    public float speed = 5f;
+    public static float speed = 5f;
     public float destroyX = -25f;
 
     void Update()
@@ -13,5 +13,10 @@ public class TileMover : MonoBehaviour
 
         if (transform.position.x < destroyX)
             Destroy(gameObject);
+    }
+
+    public static void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
     }
 }
