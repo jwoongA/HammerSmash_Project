@@ -277,6 +277,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4251055561642095011, guid: 6bcbe48919c95044aa5027b1373481ff, type: 3}
+      propertyPath: spawnInterval
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9106948219557284436, guid: 6bcbe48919c95044aa5027b1373481ff, type: 3}
       propertyPath: m_Name
       value: RoofSpawner
@@ -353,6 +357,10 @@ PrefabInstance:
     - target: {fileID: 7439027648210023433, guid: c684d527b3901cb4da35d5b03bf2faa9, type: 3}
       propertyPath: m_SortingOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581195801059994150, guid: c684d527b3901cb4da35d5b03bf2faa9, type: 3}
+      propertyPath: spawnInterval
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7846127306962713490, guid: c684d527b3901cb4da35d5b03bf2faa9, type: 3}
       propertyPath: m_SortingOrder

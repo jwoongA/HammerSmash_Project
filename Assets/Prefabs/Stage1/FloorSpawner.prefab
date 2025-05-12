@@ -1942,7 +1942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 8022919353046657814, guid: af535c37627f24645aed82e5bc587c38, type: 3}
-  spawnInterval: 2
+  spawnInterval: 10
   destroyX: -20
 --- !u!1 &6275801573574032916
 GameObject:
@@ -2006,7 +2006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167daafeb7725bd469f5a01295c2dc63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   destroyX: -20
 --- !u!1 &6644126666773591985
 GameObject:
