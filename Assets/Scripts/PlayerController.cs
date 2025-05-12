@@ -45,11 +45,5 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsJump", false); 
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Item"))
-        {
-            Destroy(other.gameObject); //'아이템'태그와 부딫히면 아이템 사라짐(먹은것처럼 표현)
-        }
-    }
+
 }
