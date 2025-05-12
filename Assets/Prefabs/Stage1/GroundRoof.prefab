@@ -5340,6 +5340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4334709436359834946}
   - component: {fileID: 1032433354087198271}
+  - component: {fileID: -2481836003933053336}
   m_Layer: 0
   m_Name: GroundRoof
   m_TagString: Untagged
@@ -5412,13 +5413,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8303643478129098720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 167daafeb7725bd469f5a01295c2dc63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
   destroyX: -25
+--- !u!114 &-2481836003933053336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303643478129098720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8638477276051925977
 GameObject:
   m_ObjectHideFlags: 0

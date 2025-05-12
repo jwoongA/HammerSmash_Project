@@ -23,7 +23,9 @@ public class TileSpawner : MonoBehaviour
         float tileWidth = 8.9f;
         spawnInterval = tileWidth / 5f; 
 
-        float tileSpeed = 5f;
+        float tileSpeed = GameSpeedManager.Instance != null
+        ? GameSpeedManager.Instance.GetCurrentSpeed()
+        : 5f;
         float desiredSpawnDistance = 30f;
         spawnInterval = tileWidth / tileSpeed;
         nextSpawnPos = transform.position;
