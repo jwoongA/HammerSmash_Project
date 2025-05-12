@@ -15,6 +15,10 @@ namespace runner
         [Header("스포너 연결")]
         public ObstacleSpawner obstacleSpawner;
 
+        [Header("타일 스포너들")]
+        public List<TileSpawner> tileSpawners;
+
+
         void Start()
         {
             currentStage = 0;
@@ -36,11 +40,17 @@ namespace runner
 
         void ApplyStageSettings(int stage)
         {
-            //예: 스테이지가 올라갈수록 빠르게, 최소 간격 0.5초
             float newInterval = Mathf.Max(0.5f, 2f - 0.3f * stage);
-            float newSpeed = Mathf.Min(10f, 5f + stage); //속도는 최대 10까지 증가
+            float newSpeed = Mathf.Min(10f, 5f + stage);
 
             obstacleSpawner.SetStageParameters(newInterval, newSpeed);
+            TileMover.SetSpeed(newSpeed); //타일 이동 속도 static 방식
+
+            foreach (TileSpawner spawner in tileSpawners)
+            {
+                if (spawner != null)
+                    spawner.SetSpeed(newSpeed); //각 타일 스포너의 생성 속도
+            }
         }
     }
 }

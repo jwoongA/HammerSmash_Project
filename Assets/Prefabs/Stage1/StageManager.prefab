@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageDuration: 30
   obstacleSpawner: {fileID: 1482223390852711578, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+  tileMover: {fileID: 0}

@@ -63,4 +63,11 @@ public class TileSpawner : MonoBehaviour
 
         return 2.048f; //기본값
     }
+
+    public void SetSpeed(float tileSpeed)
+    {
+        float tileWidth = GetTileWidth(tilePrefab);
+        spawnInterval = tileWidth / tileSpeed;
+    }
+
 }
