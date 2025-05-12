@@ -50,13 +50,13 @@ public class PlayerStatus : MonoBehaviour
             animator.SetBool("IsDamage", false);
         isTakingDamage = false;
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("태그 미정")) // 장애물에 태그 부여해서 특정 태그와 닿으면 데미지 판정
-        {
-            GetComponent<PlayerStatus>()?.TakeDamage(20f); // 최대 5번 충돌시 사망
-        }
-    }
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+        //if (collision.gameObject.CompareTag("태그 미정")) // 장애물에 태그 부여해서 특정 태그와 닿으면 데미지 판정
+        //{
+            //GetComponent<PlayerStatus>()?.TakeDamage(20f); // 최대 5번 충돌시 사망
+        //}
+    //}
     void Die()
     {
         Debug.Log("사망시UI 재생예정");
