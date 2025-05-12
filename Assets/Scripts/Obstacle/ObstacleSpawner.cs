@@ -47,6 +47,7 @@ namespace runner
             GameObject obstacle = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
             obstacle.transform.SetParent(obstacleContainer); //컨테이너 하위로 배치
 
+            // 이동속도 추가
             if (obstacle.GetComponent<ObstacleMover>() == null)
             {
                 obstacle.AddComponent<ObstacleMover>();            
