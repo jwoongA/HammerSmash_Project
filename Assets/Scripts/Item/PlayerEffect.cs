@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerEffect : MonoBehaviour
 {
+    // 플레이어 체력
     public PlayerStatus status;
 
     // 상태 효과
@@ -16,6 +17,8 @@ public class PlayerEffect : MonoBehaviour
 
     // 무적 망치 연출
     public GameObject hammerObject;
+
+    public int score = 0;
 
     private void Awake()
     {
@@ -30,9 +33,11 @@ public class PlayerEffect : MonoBehaviour
         {
             case Item.ItemType.SmallHeal:
                 Heal(10);   // 10 회복
+                AddScore(10);
                 break;
             case Item.ItemType.LargeHeal:
                 Heal(40);   // 40 회복
+                AddScore(50);
                 break;
             case Item.ItemType.HammerTime:
                 StartCoroutine(Invincibility(3.4f));    // 3.4초 무적(망치 나가신다!)
@@ -44,7 +49,7 @@ public class PlayerEffect : MonoBehaviour
                 StartCoroutine(SpeedBoost(2.2f));   // 2.2초 질주효과
                 break;
             case Item.ItemType.Coin:
-                // 점수 추가
+                AddScore(100);
                 break;
         }
     }
@@ -127,5 +132,12 @@ public class PlayerEffect : MonoBehaviour
         if (invisiblePlatform != null)
             invisiblePlatform.SetActive(false);                           
         Debug.Log("질주 끝");
+    }
+
+    // 점수
+    public void AddScore(int addscore)
+    {
+        score += addscore;
+        Debug.Log($"점수 {addscore} 획득");
     }
 }
