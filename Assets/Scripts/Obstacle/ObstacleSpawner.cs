@@ -34,6 +34,8 @@ namespace runner
 
         void SpawnObstacle()
         {
+            if (obstaclePrefabs.Length == 0 || spawnPositions.Length == 0) return;
+
             if (spawnIndex >= obstaclePrefabs.Length || spawnIndex >= spawnPositions.Length)
             {
                 spawnIndex = 0; //반복을 위한 인덱스 리셋
