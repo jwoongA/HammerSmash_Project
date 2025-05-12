@@ -53,7 +53,7 @@ public class PlayerEffect : MonoBehaviour
                 break;
             case Item.ItemType.Magnet:
                 if (magnetCoroutine != null)
-                    StopCoroutine (magnetCoroutine);
+                    StopCoroutine(magnetCoroutine);
                 magnetCoroutine = StartCoroutine(MagnetEffect(2.8f));    // 2.8초 자석효과
                 break;
             case Item.ItemType.FastRun:
@@ -74,7 +74,7 @@ public class PlayerEffect : MonoBehaviour
         {
             status.currentHP = Mathf.Min(status.currentHP + amount, status.maxHP);
             Debug.Log($"체력 {amount} 회복");
-        }        
+        }
     }
 
     // 무적 상태 처리 코루틴
@@ -97,23 +97,6 @@ public class PlayerEffect : MonoBehaviour
         }
         Debug.Log("무적 종료");
     }
-
-    // 장애물에 적어야 되는 부분 무적 처리
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        var effect = other.GetComponent<PlayerEffect>();
-    //        if (effect != null && effect.isInvincible)
-    //        {
-    //            Destroy(gameObject); // 장애물 파괴
-    //            return;
-    //        }
-
-    //        // 일반 피격 처리
-    //        Debug.Log("플레이어가 장애물에 닿음!");
-    //    }
-    //}
 
     // 자석 효과 코루틴
     private IEnumerator MagnetEffect(float duration)
@@ -143,7 +126,7 @@ public class PlayerEffect : MonoBehaviour
         isInvincible = false;
         ignoreHole = false;
         if (invisiblePlatform != null)
-            invisiblePlatform.SetActive(false);                           
+            invisiblePlatform.SetActive(false);
         Debug.Log("질주 끝");
     }
 
