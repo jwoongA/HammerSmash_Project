@@ -5,16 +5,19 @@ using UnityEngine;
 public class PlayerEffect : MonoBehaviour
 {
     // 플레이어 체력
-    public PlayerStatus status;
+    private PlayerStatus status;
 
+    [Header("아이템 효과")]
     // 상태 효과
     public bool isInvincible = false;   // 무적 효과
     public bool isMagnetActive = false;    // 자석 효과
     public bool ignoreHole = false;    // 구멍 무시 효과
 
+    [Header("투명 발판(구멍낙사 방지)")]
     // 투명 플랫폼
     public GameObject invisiblePlatform;
 
+    [Header("휘두르는 망치 오브젝트")]
     // 무적 망치 연출
     public GameObject hammerObject;
 

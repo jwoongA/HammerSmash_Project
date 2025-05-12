@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
+    [Header("아이템 목록")]
     // 스폰할 아이템 설정
     public GameObject[] itemPrefabs;
-
     // 아이템 스폰 주기 (2초마다 1번)
     public float spawnInterval = 2f;
 
+    [Header("장애물 레이어")]
     // 겹침 방지 설정
     public LayerMask obstacleLayer;
 
+    [Header("장애물 스폰 위치")]
     // 스폰 위치 설정
     public float spawnX = 10f;
     public float minY = -2f;
     public float maxY = 2f;
 
+    [Header("아이템 이동 속도")]
     // 이동 속도
     public float itemMoveSpeed = 3f;
 
