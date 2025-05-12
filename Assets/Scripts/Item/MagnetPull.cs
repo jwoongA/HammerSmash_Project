@@ -5,6 +5,8 @@ using UnityEngine;
 public class MagnetPull : MonoBehaviour
 {
     private Transform player;
+
+    [Header("자석 효과 설정")]
     [SerializeField] private float magentSpeed = 8f;
     [SerializeField] private float magentRange = 7f;
 
