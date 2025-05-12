@@ -1,3 +1,4 @@
+using runner;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,6 +61,7 @@ public class PlayerStatus : MonoBehaviour
     void Die()
     {
         Debug.Log("사망시UI 재생예정");
+        GameManager.Instance.GameOver(); // 게임 오버 처리
     }
 }
 
