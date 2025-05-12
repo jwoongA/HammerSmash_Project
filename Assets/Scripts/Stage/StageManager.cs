@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace runner
 {
@@ -8,21 +8,38 @@ namespace runner
     {
         [Header("스테이지 변경 간격 (초)")]
         public float stageDuration = 30f;
-
         private int currentStage = 0;
         private float stageTimer = 0f;
 
         [Header("스포너 연결")]
         public ObstacleSpawner obstacleSpawner;
 
+        private bool isStageScene = false;
+
         void Start()
         {
-            currentStage = 0;
-            ApplyStageSettings(currentStage);
-        }
+            // 현재 씬 이름 확인
+            string sceneName = SceneManager.GetActiveScene().name;
 
+            // 씬 이름에 "Stage"가 포함되어 있으면 활성화
+            if (sceneName.Contains("Stage"))
+            {
+                isStageScene = true;
+
+                currentStage = 0;
+                ApplyStageSettings(currentStage);
+            }
+            else
+            {
+                isStageScene = false;
+                enabled = false; // 아예 Update 중단 (성능 최적)
+            }
+        }
         void Update()
         {
+            // 안전을 위해 다시 한 번 체크
+            if (!isStageScene || obstacleSpawner == null) return;
+
             stageTimer += Time.deltaTime;
 
             if (stageTimer >= stageDuration)
@@ -30,17 +47,21 @@ namespace runner
                 currentStage++;
                 stageTimer = 0f;
 
-                ApplyStageSettings(currentStage);
+                if (currentStage == 1)
+                {
+                    ApplyStageSettings(currentStage);
+                }
             }
         }
-
         void ApplyStageSettings(int stage)
         {
-            //예: 스테이지가 올라갈수록 빠르게, 최소 간격 0.5초
             float newInterval = Mathf.Max(0.5f, 2f - 0.3f * stage);
-            float newSpeed = Mathf.Min(10f, 5f + stage); //속도는 최대 10까지 증가
+            float newSpeed = Mathf.Min(10f, 5f + stage);
 
-            obstacleSpawner.SetStageParameters(newInterval, newSpeed);
+            if (obstacleSpawner != null)
+            {
+                obstacleSpawner.SetStageParameters(newInterval, newSpeed);
+            }
         }
     }
 }

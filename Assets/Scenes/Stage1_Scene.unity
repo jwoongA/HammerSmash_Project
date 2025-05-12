@@ -522,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 4327561894902967056, guid: 882f4bc8b8f33ee4c890744eda3d42aa, type: 3}
       propertyPath: obstacleSpawner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1558766344}
     - target: {fileID: 6172123480819261547, guid: 882f4bc8b8f33ee4c890744eda3d42aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -721,6 +721,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1558766344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+  m_PrefabInstance: {fileID: 1712432989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1253e268155ac5b4688ed7f4de170bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1660646611
 GameObject:
   m_ObjectHideFlags: 0
