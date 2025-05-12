@@ -36,9 +36,9 @@ namespace runner
 
         void ApplyStageSettings(int stage)
         {
-            // 예: 스테이지가 올라갈수록 빠르게, 최소 간격 0.5초
+            //예: 스테이지가 올라갈수록 빠르게, 최소 간격 0.5초
             float newInterval = Mathf.Max(0.5f, 2f - 0.3f * stage);
-            float newSpeed = Mathf.Min(10f, 5f + stage); // 속도는 최대 10까지 증가
+            float newSpeed = Mathf.Min(10f, 5f + stage); //속도는 최대 10까지 증가
 
             obstacleSpawner.SetStageParameters(newInterval, newSpeed);
         }

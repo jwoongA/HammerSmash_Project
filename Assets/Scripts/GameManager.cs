@@ -27,7 +27,7 @@ namespace runner
         {
             Debug.Log("게임 오버!");
             // 예: 현재 씬을 다시 로드 (리트라이)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
