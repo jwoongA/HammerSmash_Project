@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,17 +6,17 @@ namespace runner
 {
     public class ObstacleSpawner : MonoBehaviour
     {
-        [Header("Àå¾Ö¹° ÇÁ¸®ÆÕµé (¼ø¼­ Áß¿ä)")]
-        public GameObject[] obstaclePrefabs; //Overhead, Ground, Fallhole ¼ø¼­
+        [Header("ì¥ì• ë¬¼ í”„ë¦¬íŒ¹ë“¤ (ìˆœì„œ ì¤‘ìš”)")]
+        public GameObject[] obstaclePrefabs; //Overhead, Ground, Fallhole ìˆœì„œ
 
-        [Header("Àå¾Ö¹° »ı¼º À§Ä¡ (¼ø¼­ Áß¿ä)")]
-        public Transform[] spawnPositions; //°³º° ½ºÆùÆ÷ÀÎÆ® ¿¬°á
+        [Header("ì¥ì• ë¬¼ ìƒì„± ìœ„ì¹˜ (ìˆœì„œ ì¤‘ìš”)")]
+        public Transform[] spawnPositions; //ê°œë³„ ìŠ¤í°í¬ì¸íŠ¸ ì—°ê²°
 
-        [Header("»ı¼º °£°İ & ÀÌµ¿ ¼Óµµ")]
+        [Header("ìƒì„± ê°„ê²© & ì´ë™ ì†ë„")]
         public float spawnInterval = 2f;
         public float obstacleSpeed = 5f;
 
-        [Header("Àå¾Ö¹° ºÎ¸ğ ÄÁÅ×ÀÌ³Ê")]
+        [Header("ì¥ì• ë¬¼ ë¶€ëª¨ ì»¨í…Œì´ë„ˆ")]
         public Transform obstacleContainer;
 
         private int spawnIndex = 0;
@@ -34,9 +34,11 @@ namespace runner
 
         void SpawnObstacle()
         {
+            if (obstaclePrefabs.Length == 0 || spawnPositions.Length == 0) return;
+
             if (spawnIndex >= obstaclePrefabs.Length || spawnIndex >= spawnPositions.Length)
             {
-                spawnIndex = 0; //¹İº¹À» À§ÇÑ ÀÎµ¦½º ¸®¼Â
+                spawnIndex = 0; //ë°˜ë³µì„ ìœ„í•œ ì¸ë±ìŠ¤ ë¦¬ì…‹
             }
 
             GameObject prefab = obstaclePrefabs[spawnIndex];
@@ -45,7 +47,12 @@ namespace runner
             if (prefab == null || spawnPoint == null) return;
 
             GameObject obstacle = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
-            obstacle.transform.SetParent(obstacleContainer); //ÄÁÅ×ÀÌ³Ê ÇÏÀ§·Î ¹èÄ¡
+            obstacle.transform.SetParent(obstacleContainer); //ì»¨í…Œì´ë„ˆ í•˜ìœ„ë¡œ ë°°ì¹˜
+
+            if (obstacle.GetComponent<ObstacleMover>() == null)
+            {
+                obstacle.AddComponent<ObstacleMover>();
+            }
 
             spawnIndex++;
         }
@@ -59,10 +66,6 @@ namespace runner
                 if (child.position.x < -20f)
                 {
                     toRemove.Add(child);
-                }
-                else
-                {
-                    child.Translate(Vector3.left * obstacleSpeed * Time.deltaTime);
                 }
             }
 
