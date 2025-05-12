@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerEffect : MonoBehaviour
 {
-    // 체력 설정
-    public int maxHP = 120;
-    public int currentHP = 120;
+    public PlayerStatus status;
 
     // 상태 효과
     public bool isInvincible = false;   // 무적 효과
@@ -18,6 +16,12 @@ public class PlayerEffect : MonoBehaviour
 
     // 무적 망치 연출
     public GameObject hammerObject;
+
+    private void Awake()
+    {
+        if (status == null)
+            status = GetComponent<PlayerStatus>();
+    }
 
     // 아이템 종류에 따라 효과를 분기 처리
     public void ApplyItemEffect(Item.ItemType type)
@@ -48,9 +52,11 @@ public class PlayerEffect : MonoBehaviour
     // 체력 회복 함수
     private void Heal(int amount)
     {
-        // maxHP를 초과해서 회복하지 못하게 막기
-        currentHP = Mathf.Min(currentHP + amount, maxHP);
-        Debug.Log($"체력 {amount} 회복");
+        if (status != null)
+        {
+            status.currentHP = Mathf.Min(status.currentHP + amount, status.maxHP);
+            Debug.Log($"체력 {amount} 회복");
+        }        
     }
 
     // 무적 상태 처리 코루틴
