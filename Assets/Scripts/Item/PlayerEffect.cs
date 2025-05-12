@@ -16,6 +16,9 @@ public class PlayerEffect : MonoBehaviour
     // 투명 플랫폼
     public GameObject invisiblePlatform;
 
+    // 무적 망치 연출
+    public GameObject hammerObject;
+
     // 아이템 종류에 따라 효과를 분기 처리
     public void ApplyItemEffect(Item.ItemType type)
     {
@@ -54,12 +57,20 @@ public class PlayerEffect : MonoBehaviour
     private IEnumerator Invincibility(float duration)
     {
         isInvincible = true;
+        if (hammerObject != null)
+        {
+            hammerObject.SetActive(true);
+        }
         Debug.Log("무적 시작");
 
         // 지속 시간 동안 대기
         yield return new WaitForSeconds(duration);
 
         isInvincible = false;
+        if (hammerObject != null)
+        {
+            hammerObject.SetActive(false);
+        }
         Debug.Log("무적 종료");
     }
 
