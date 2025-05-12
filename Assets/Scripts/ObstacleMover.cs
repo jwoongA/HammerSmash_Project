@@ -8,10 +8,10 @@ public class ObstacleMover : MonoBehaviour
     public static float globalSpeedMultiplier = 1f;
     [Header("Road 속도 조절")]
     public float baseSpeed = 5f;
-    public float targetSpeed = 10f;//최종 속도
+    public float targetSpeed = 7f;//최종 속도
 
     private float elapsedTime = 0f;
-    public float maxTime = 30f; // 30초 동안 점점 빨라짐
+    public float maxTime = 60f; // 30초 동안 점점 빨라짐
 
     void Update()
     {
@@ -21,7 +21,7 @@ public class ObstacleMover : MonoBehaviour
         float currentSpeed = Mathf.Lerp(baseSpeed, targetSpeed, t);
 
         transform.Translate(Vector2.left * currentSpeed * globalSpeedMultiplier * Time.deltaTime);
-        if (transform.position.x < -30f)
+        if (transform.position.x < -50f)
             Destroy(gameObject);
     }
 }
