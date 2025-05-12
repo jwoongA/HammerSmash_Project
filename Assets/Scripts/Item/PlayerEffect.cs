@@ -21,6 +21,10 @@ public class PlayerEffect : MonoBehaviour
     // 무적 망치 연출
     public GameObject hammerObject;
 
+    private Coroutine invincibleCoroutine;
+    private Coroutine magnetCoroutine;
+    private Coroutine speedCoroutine;
+
     public int score = 0;
 
     private void Awake()
@@ -43,13 +47,19 @@ public class PlayerEffect : MonoBehaviour
                 AddScore(50);
                 break;
             case Item.ItemType.HammerTime:
-                StartCoroutine(Invincibility(3.4f));    // 3.4초 무적(망치 나가신다!)
+                if (invincibleCoroutine != null)
+                    StopCoroutine(invincibleCoroutine);
+                invincibleCoroutine = StartCoroutine(Invincibility(3.4f));    // 3.4초 무적(망치 나가신다!)
                 break;
             case Item.ItemType.Magnet:
-                StartCoroutine(MagnetEffect(2.8f));    // 2.8초 자석효과
+                if (magnetCoroutine != null)
+                    StopCoroutine (magnetCoroutine);
+                magnetCoroutine = StartCoroutine(MagnetEffect(2.8f));    // 2.8초 자석효과
                 break;
             case Item.ItemType.FastRun:
-                StartCoroutine(SpeedBoost(2.2f));   // 2.2초 질주효과
+                if (speedCoroutine != null)
+                    StopCoroutine(speedCoroutine);
+                speedCoroutine = StartCoroutine(SpeedBoost(2.2f));   // 2.2초 질주효과
                 break;
             case Item.ItemType.Coin:
                 AddScore(100);
