@@ -9,8 +9,8 @@ public class RoadSpawner : MonoBehaviour
 
 
     [Header("���� ���� ����")]
-    public float initialSpawnInterval = 10f;    // �ʱ� ����
-    public float minSpawnInterval = 8f;        // �ּ� ����
+    public float initialSpawnInterval = 1.5f;    // �ʱ� ����
+    public float minSpawnInterval = 2f;        // �ּ� ����
     public float intervalDecreaseDuration = 60f; // �� �� ���� ������ ������
 
     private float currentSpawnInterval;
