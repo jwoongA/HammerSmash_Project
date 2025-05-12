@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5869359180438729623}
   - component: {fileID: 942303706600313688}
   - component: {fileID: 8561044075529802687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Obstacle_Overhead_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
