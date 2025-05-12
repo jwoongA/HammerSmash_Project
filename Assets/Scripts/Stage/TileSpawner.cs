@@ -8,7 +8,7 @@ public class TileSpawner : MonoBehaviour
     public GameObject tilePrefab;
 
     [Header("생성 주기")]
-    public float spawnInterval = 1.5f;
+    public float spawnInterval = 10f;
 
     [Header("타일 삭제 거리")]
     public float destroyX = -25f;
@@ -32,7 +32,6 @@ public class TileSpawner : MonoBehaviour
 
 
     }
-
 
     void Update()
     {

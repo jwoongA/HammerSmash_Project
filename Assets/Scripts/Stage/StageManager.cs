@@ -18,6 +18,8 @@ namespace runner
         [Header("타일 스포너들")]
         public List<TileSpawner> tileSpawners;
 
+        public float gameDuration = 30f;
+        private float gameTimer = 0f;
 
         void Start()
         {
@@ -27,16 +29,25 @@ namespace runner
 
         void Update()
         {
+            gameTimer += Time.deltaTime;
+
+            if (gameTimer >= gameDuration)
+            {
+                GameOver();
+                return;
+            }
+
+            // 기존 스테이지 로직 유지
             stageTimer += Time.deltaTime;
 
             if (stageTimer >= stageDuration)
             {
-                currentStage++;
                 stageTimer = 0f;
-
+                currentStage++;
                 ApplyStageSettings(currentStage);
             }
         }
+
 
         void ApplyStageSettings(int stage)
         {
@@ -52,5 +63,11 @@ namespace runner
                     spawner.SetSpeed(newSpeed); //각 타일 스포너의 생성 속도
             }
         }
+        void GameOver()
+        {
+            Time.timeScale = 0f;
+            //TODO: 게임오버 UI 띄우기, 씬 전환 등 추가 가능
+        }
+
     }
 }
