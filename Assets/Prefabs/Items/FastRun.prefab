@@ -88,7 +88,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 75
   m_Sprite: {fileID: 21300000, guid: 9c6329ba9e38a2a48874b0f90be9c41f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -191,3 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601987cdbb1a9224d8e75d8207a273d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magentSpeed: 8
+  magentRange: 7
