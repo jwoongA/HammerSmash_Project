@@ -45,7 +45,7 @@ public class ItemSpawner : MonoBehaviour
 
         // 스폰 진행
         GameObject item = Instantiate(GetRandomItem(), spawnPos, Quaternion.identity);
-        item.AddComponent<ObstacleMover>().speed = itemMoveSpeed;
+        item.AddComponent<ObstacleMover>().baseSpeed = itemMoveSpeed;
     }
 
     private GameObject GetRandomItem()
