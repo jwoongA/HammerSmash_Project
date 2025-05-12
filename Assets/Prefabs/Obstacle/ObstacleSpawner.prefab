@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 258939420918532996}
   m_Layer: 0
   m_Name: SpawnPoint_Ground_3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8632527321168865418}
   m_Layer: 0
   m_Name: SpawnPoint_Fallhole_1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 179972876722829139}
   m_Layer: 0
   m_Name: SpawnPoint_Overhead_2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 2345795116015183127}
   m_Layer: 0
   m_Name: SpawnPoint_Overhead_3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 436723171078484860}
   m_Layer: 0
   m_Name: SpawnPoint_Ground_1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 2043496244603717048}
   m_Layer: 0
   m_Name: SpawnPoint_Fallhole_2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 5747513612512580858}
   m_Layer: 0
   m_Name: SpawnPoint_Ground_2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 2853924941726739302}
   m_Layer: 0
   m_Name: SpawnPoint_Overhead_0
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 8899324180823302396}
   m_Layer: 0
   m_Name: SpawnPoint_Overhead_1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 7624050111116973930}
   m_Layer: 0
   m_Name: SpawnPoint_Fallhole_3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 2577709993454060070}
   m_Layer: 0
   m_Name: SpawnPoint_Ground_0
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 6889828036304440196}
   m_Layer: 0
   m_Name: SpawnPoint_Fallhole_0
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

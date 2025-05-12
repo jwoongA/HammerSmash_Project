@@ -20,10 +20,6 @@ public class ItemSpawner : MonoBehaviour
     public float minY = -2f;
     public float maxY = 2f;
 
-    [Header("아이템 이동 속도")]
-    // 이동 속도
-    public float itemMoveSpeed = 3f;
-
     private void Start()
     {
         InvokeRepeating(nameof(SpawnItem), 1f, spawnInterval);
@@ -45,7 +41,8 @@ public class ItemSpawner : MonoBehaviour
 
         // 스폰 진행
         GameObject item = Instantiate(GetRandomItem(), spawnPos, Quaternion.identity);
-        item.AddComponent<ObstacleMover>().baseSpeed = itemMoveSpeed;
+
+        ObstacleMover mover = item.AddComponent<ObstacleMover>();
     }
 
     private GameObject GetRandomItem()
