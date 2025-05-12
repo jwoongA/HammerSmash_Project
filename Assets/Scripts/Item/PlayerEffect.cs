@@ -7,15 +7,12 @@ public class PlayerEffect : MonoBehaviour
     // 체력 설정
     public int maxHP = 120;
     public int currentHP = 120;
-
     // 상태 효과
     public bool isInvincible = false;   // 무적 효과
     public bool isMagnetActive = false;    // 자석 효과
     public bool ignoreHole = false;    // 구멍 무시 효과
-
     // 투명 플랫폼
     public GameObject invisiblePlatform;
-
     // 아이템 종류에 따라 효과를 분기 처리
     public void ApplyItemEffect(Item.ItemType type)
     {
@@ -41,7 +38,6 @@ public class PlayerEffect : MonoBehaviour
                 break;
         }
     }
-
     // 체력 회복 함수
     private void Heal(int amount)
     {
@@ -49,7 +45,6 @@ public class PlayerEffect : MonoBehaviour
         currentHP = Mathf.Min(currentHP + amount, maxHP);
         Debug.Log($"체력 {amount} 회복");
     }
-
     // 무적 상태 처리 코루틴
     private IEnumerator Invincibility(float duration)
     {
@@ -62,24 +57,18 @@ public class PlayerEffect : MonoBehaviour
         isInvincible = false;
         Debug.Log("무적 종료");
     }
-
-    // 장애물에 적어야 되는 부분 무적 처리
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        var effect = other.GetComponent<PlayerEffect>();
-    //        if (effect != null && effect.isInvincible)
-    //        {
-    //            Destroy(gameObject); // 장애물 파괴
-    //            return;
-    //        }
-
-    //        // 일반 피격 처리
-    //        Debug.Log("플레이어가 장애물에 닿음!");
-    //    }
-    //}
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            var effect = other.GetComponent<PlayerEffect>();
+            if (effect != null && effect.isInvincible)
+            {
+                Destroy(gameObject); // 장애물 파괴
+                return;
+            }
+        }
+    }
     // 자석 효과 코루틴
     private IEnumerator MagnetEffect(float duration)
     {
@@ -91,7 +80,6 @@ public class PlayerEffect : MonoBehaviour
         isMagnetActive = false;
         Debug.Log("자석 효과 끝");
     }
-
     // 속도 증가 코루틴
     private IEnumerator SpeedBoost(float duration)
     {

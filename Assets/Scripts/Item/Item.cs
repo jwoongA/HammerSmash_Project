@@ -14,7 +14,6 @@ public class Item : MonoBehaviour
         HammerTime,
         Coin
     }
-
     public ItemType itemType;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -27,7 +26,6 @@ public class Item : MonoBehaviour
         {
             effect.ApplyItemEffect(itemType);
         }
-
         // 아이템은 획득 후 제거
         Destroy(gameObject);
     }
