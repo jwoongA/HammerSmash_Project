@@ -9,8 +9,8 @@ public class RoadSpawner : MonoBehaviour
 
 
     [Header("스폰 간격 조절")]
-    public float initialSpawnInterval = 1.5f;    // 초기 간격
-    public float minSpawnInterval = 0.5f;        // 최소 간격
+    public float initialSpawnInterval = 3f;    // 초기 간격
+    public float minSpawnInterval = 2f;        // 최소 간격
     public float intervalDecreaseDuration = 30f; // 몇 초 동안 간격을 줄일지
 
     private float currentSpawnInterval;
@@ -45,7 +45,7 @@ public class RoadSpawner : MonoBehaviour
 
         float tileWidth = GetTileWidth(newTile);
 
-        Destroy(newTile, 10f);
+        Destroy(newTile, 30f);
 
         spawnPoint.position += new Vector3(tileWidth, 0f, 0f);
     }
@@ -59,6 +59,6 @@ public class RoadSpawner : MonoBehaviour
             return renderer.bounds.size.x;
         }
 
-        return 10f; 
+        return 30f; 
     }
 }

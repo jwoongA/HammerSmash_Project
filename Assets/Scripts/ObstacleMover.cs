@@ -21,7 +21,7 @@ public class ObstacleMover : MonoBehaviour
         float currentSpeed = Mathf.Lerp(baseSpeed, targetSpeed, t);
 
         transform.Translate(Vector2.left * currentSpeed * globalSpeedMultiplier * Time.deltaTime);
-        if (transform.position.x < -20f)
+        if (transform.position.x < -30f)
             Destroy(gameObject);
     }
 }
