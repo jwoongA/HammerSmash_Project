@@ -100,35 +100,18 @@ public class PlayerStatus : MonoBehaviour
     void Die()
     {
         if (isDead) return; // 사망 처리는 단 1회만
-        isDead = true; 
+        isDead = true;
         Debug.Log("사망! 게임 오버 UI 출력");
         Time.timeScale = 0f;
 
         //맵생성 중지
         gameSpeedManager.enabled = false;
 
-        //// 장애물 생성 중지
-        //if (obstacleSpawner != null)
-        //{
-        //    obstacleSpawner.enabled = false; // Update() 비활성화
-        //}
-
-        //// 맵 이동 정지
-        //if (stageManager != null)
-        //{
-        //    stageManager.enabled = false; // Update() 비활성화
-        //}
-        ////바닥?생성 정지
-        //if (roadSpawner != null)
-        //{
-        //    roadSpawner.enabled = false; // Update() 멈춤
-        //}
 
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
         }
-        //GameManager.Instance.GameOver(); // 게임 오버 처리
     }
 }
 

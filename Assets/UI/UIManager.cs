@@ -8,7 +8,9 @@ public enum UIState
     Start,
     InGame,
     Lobby,
-    GameOver
+    GameOver,
+    Stage1ClearUI,
+    GameClear
 }
 
 public class UIManager : MonoBehaviour
@@ -28,6 +30,8 @@ public class UIManager : MonoBehaviour
     InGameUI ingameUI = null;
     LobbyUI lobbyUI = null;
     GameOverUI gameOverUI = null;
+    Stage1ClearUI stage1ClearUI = null;
+    GameClearUI gameClear = null;
 
     //TheStack theStack = null;
 
@@ -49,6 +53,13 @@ public class UIManager : MonoBehaviour
         gameOverUI = GetComponentInChildren<GameOverUI>(true);
         gameOverUI?.Init(this);
 
+        stage1ClearUI = GetComponentInChildren<Stage1ClearUI>(true);
+        stage1ClearUI?.Init(this);
+
+
+        //gameClear = GetComponentInChildren<GameClearUI>(true);
+        //gameClear?.Init(this); 
+
         ChangeState(UIState.Start);
     }
 
@@ -59,6 +70,7 @@ public class UIManager : MonoBehaviour
       //  ingameUI?.SetActive(currentState);
         lobbyUI?.SetActive(currentState);
         gameOverUI?.SetActive(currentState);
+        stage1ClearUI?.SetActive(currentState);
     }
 
     public void OnClickStart()
