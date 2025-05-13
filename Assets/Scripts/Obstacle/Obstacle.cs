@@ -16,10 +16,6 @@ namespace runner
         [Header("장애물 종류")]
         public ObstacleType obstacleType;
 
-        [Tooltip("장애물 간 간격 범위")]
-        [SerializeField] private float minSpacing = 10f;
-        [SerializeField] private float maxSpacing = 20f;
-
         [SerializeField] private int spawnIndex = 0;
 
         void Awake()
