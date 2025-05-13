@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8843308634770500360}
   - component: {fileID: 2729956966252815317}
   - component: {fileID: 3343374931515955366}
+  - component: {fileID: 3595118219056102889}
   m_Layer: 6
   m_Name: Obstacle_FallHole_01
   m_TagString: Obstacle
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5035813900232245950}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -6, z: 0}
+  m_LocalPosition: {x: -2.4, y: -6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,8 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfff57466b8ed314e90a9786196eeab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 2
+  obstacleType: 0
   minSpacing: 2
   maxSpacing: 10
   damage: 10
   spawnIndex: 0
+--- !u!114 &3595118219056102889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035813900232245950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

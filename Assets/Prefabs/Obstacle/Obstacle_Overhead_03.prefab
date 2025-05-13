@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5869359180438729623}
   - component: {fileID: 942303706600313688}
   - component: {fileID: 8561044075529802687}
+  - component: {fileID: -6118198733038633498}
   m_Layer: 6
   m_Name: Obstacle_Overhead_03
   m_TagString: Obstacle
@@ -176,3 +177,15 @@ MonoBehaviour:
   maxSpacing: 10
   damage: 10
   spawnIndex: 0
+--- !u!114 &-6118198733038633498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2491746085256508998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

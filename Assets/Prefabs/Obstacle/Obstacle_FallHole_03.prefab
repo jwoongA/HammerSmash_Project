@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7521124119887471771}
   - component: {fileID: 2820921071552416689}
   - component: {fileID: 2518823084045711302}
+  - component: {fileID: -6733576394147084425}
   m_Layer: 6
   m_Name: Obstacle_FallHole_03
   m_TagString: Obstacle
@@ -97,8 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfff57466b8ed314e90a9786196eeab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 2
+  obstacleType: 0
   minSpacing: 2
   maxSpacing: 10
   damage: 10
   spawnIndex: 0
+--- !u!114 &-6733576394147084425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800331266526884658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3559157442364674179}
   - component: {fileID: 5295916367112091423}
   - component: {fileID: 7620812329874375772}
+  - component: {fileID: 2379683756531650945}
   m_Layer: 6
   m_Name: Obstacle_GroundFireTest
   m_TagString: Obstacle
@@ -176,6 +177,18 @@ MonoBehaviour:
   maxSpacing: 10
   damage: 10
   spawnIndex: 0
+--- !u!114 &2379683756531650945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606648882437395324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4908431005403811132
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +202,7 @@ GameObject:
   - component: {fileID: 3936121028788087899}
   - component: {fileID: 2503925800589057637}
   - component: {fileID: 1807134725921551672}
+  - component: {fileID: 333186756848186524}
   m_Layer: 6
   m_Name: Obstacle_GroundFireTest (2)
   m_TagString: Obstacle
@@ -352,6 +366,18 @@ MonoBehaviour:
   maxSpacing: 10
   damage: 10
   spawnIndex: 0
+--- !u!114 &333186756848186524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908431005403811132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5030641109226215946
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +425,7 @@ GameObject:
   - component: {fileID: 2422790438975868388}
   - component: {fileID: 1495503548052890363}
   - component: {fileID: 8366214596054696211}
+  - component: {fileID: 8278197763597170898}
   m_Layer: 6
   m_Name: Obstacle_GroundFireTest (1)
   m_TagString: Obstacle
@@ -562,3 +589,15 @@ MonoBehaviour:
   maxSpacing: 10
   damage: 10
   spawnIndex: 0
+--- !u!114 &8278197763597170898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884524253493989060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
