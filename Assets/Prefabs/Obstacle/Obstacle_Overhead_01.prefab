@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7913523569939978617}
   - component: {fileID: 2464531934493205293}
   - component: {fileID: 7160889597397067234}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Obstacle_Overhead_01
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -174,5 +174,4 @@ MonoBehaviour:
   obstacleType: 0
   minSpacing: 2
   maxSpacing: 10
-  damage: 10
   spawnIndex: 0
