@@ -15,14 +15,25 @@ public class PlayerStatus : MonoBehaviour
 
     public GameObject gameOverPanel; //사망시 출력할 판넬
     public bool isFallen = false; // 추락 관련 코드, 중복 호출 방지용
+    private StageManager stageManager;
+    private ObstacleSpawner obstacleSpawner;
+    private RoadSpawner roadSpawner;
+    public GameSpeedManager gameSpeedManager;
+
 
     void Start()
     {
         currentHP = maxHP;                 
         animator = GetComponentInChildren<Animator>(); 
         effect = GetComponent<PlayerEffect>();
+
         if (gameOverPanel != null) 
             gameOverPanel?.SetActive(false); // 게임 오버 판넬 혹시 모르니 실행 시 비활성화 확실히 해두기
+        
+        stageManager = FindObjectOfType<StageManager>();
+        obstacleSpawner = FindObjectOfType<ObstacleSpawner>();
+        roadSpawner = FindObjectOfType<RoadSpawner>();
+        gameSpeedManager = FindObjectOfType<GameSpeedManager>();
     }
     void Update()
     {
@@ -92,6 +103,26 @@ public class PlayerStatus : MonoBehaviour
         isDead = true; 
         Debug.Log("사망! 게임 오버 UI 출력");
         Time.timeScale = 0f;
+
+        //맵생성 중지
+        gameSpeedManager.enabled = false;
+
+        //// 장애물 생성 중지
+        //if (obstacleSpawner != null)
+        //{
+        //    obstacleSpawner.enabled = false; // Update() 비활성화
+        //}
+
+        //// 맵 이동 정지
+        //if (stageManager != null)
+        //{
+        //    stageManager.enabled = false; // Update() 비활성화
+        //}
+        ////바닥?생성 정지
+        //if (roadSpawner != null)
+        //{
+        //    roadSpawner.enabled = false; // Update() 멈춤
+        //}
 
         if (gameOverPanel != null)
         {
