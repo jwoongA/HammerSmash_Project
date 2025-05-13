@@ -13,7 +13,7 @@ namespace runner
         public Transform[] spawnPositions; //개별 스폰포인트 연결
 
         [Header("생성 간격 & 이동 속도")]
-        public float spawnInterval = 2f;
+        public float spawnInterval = 20f;
         public float obstacleSpeed = 5f;
 
         [Header("장애물 부모 컨테이너")]
