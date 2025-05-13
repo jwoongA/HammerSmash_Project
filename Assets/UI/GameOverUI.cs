@@ -12,7 +12,7 @@ public class GameOverUI : BaseUI
 
     protected override UIState GetUIState()
     {
-        return UIState.GameOver; // 너의 UI 상태 Enum에 따라 변경
+        return UIState.GameOver; 
     }
 
     public override void Init(UIManager uiManager)
@@ -32,15 +32,15 @@ public class GameOverUI : BaseUI
     }
     public void OnRestartButtonClicked()
     {
-        Time.timeScale = 1f;
         Debug.Log("버튼 클릭됨! → 게임 재시작");
+        Time.timeScale = 1f;
         GameManager.Instance.ChangeState(GameState.InGame);
     }
    
     public void OnLobbyButtonClicked()
     {
-        Time.timeScale = 1f;
         Debug.Log("버튼 클릭됨! → 로비로 이동");
+        Time.timeScale = 1f;
         GameManager.Instance.ChangeState(GameState.Lobby);
     }
    

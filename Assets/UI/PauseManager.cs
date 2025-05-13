@@ -19,6 +19,7 @@ public class PauseManager : MonoBehaviour
 
     public void TogglePause()
     {
+        Debug.Log("스톱 버튼 눌림!");
         isPaused = !isPaused;
 
         if (isPaused)
