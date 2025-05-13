@@ -20,9 +20,6 @@ namespace runner
         [SerializeField] private float minSpacing = 10f;
         [SerializeField] private float maxSpacing = 20f;
 
-        [Header("피격 관련 설정")]
-        [SerializeField] private float damage = 10f;
-
         [SerializeField] private int spawnIndex = 0;
 
         void Awake()
