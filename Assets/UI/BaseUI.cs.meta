@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/UI/BaseUI.cs.meta
+guid: b406583c2f0b81d4d93ace4bb53a4e93
+========
+guid: bc4fbc9f33846d24bb091ae14249ccc9
+>>>>>>>> main:Assets/Scripts/Item/GameSpeedManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

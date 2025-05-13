@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using runner;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,16 @@ public class PlayerStatus : MonoBehaviour
     private bool isTakingDamage = false;
     private PlayerEffect effect;
 
+    public GameObject gameOverPanel; //사망시 출력할 판넬
+    public bool isFallen = false; // 추락 관련 코드, 중복 호출 방지용
+
     void Start()
     {
         currentHP = maxHP;                 
         animator = GetComponentInChildren<Animator>(); 
         effect = GetComponent<PlayerEffect>();
+        if (gameOverPanel != null) 
+            gameOverPanel?.SetActive(false); // 게임 오버 판넬 혹시 모르니 실행 시 비활성화 확실히 해두기
     }
     void Update()
     {
@@ -27,6 +33,17 @@ public class PlayerStatus : MonoBehaviour
         {
             currentHP = 0;
             Die();
+        }
+        //추락 확인 코드
+        {
+            // 화면 아래로 떨어졌는지 검사
+            if (!isFallen && transform.position.y < -10f)
+            {
+                isFallen = true;
+                Debug.Log(" 플레이어가 화면 밖으로 떨어짐 → 게임 오버 처리");
+
+                Die();
+            }
         }
     }
     public void TakeDamage(float damage)
@@ -65,10 +82,22 @@ public class PlayerStatus : MonoBehaviour
             if (effect != null && effect.isInvincible) return;
             TakeDamage(20f);
         }
+        
     }
+
+    private bool isDead = false;
     void Die()
     {
-        //Debug.Log("사망시UI 재생예정");
+        if (isDead) return; // 사망 처리는 단 1회만
+        isDead = true; 
+        Debug.Log("사망! 게임 오버 UI 출력");
+        Time.timeScale = 0f;
+
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+        }
+        //GameManager.Instance.GameOver(); // 게임 오버 처리
     }
 }
 
