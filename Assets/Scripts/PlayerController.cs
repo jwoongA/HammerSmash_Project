@@ -13,10 +13,18 @@ public class PlayerController : MonoBehaviour
 
     private PlayerStatus playerStatus;
 
+    public AudioClip firstJumpSound; // 1단 점프 소리
+    public AudioClip doubleJumpSound; // 2단 점프 소리
+    private AudioSource audioSource;
+
+    public AudioClip slidingSound; // 슬라이딩 소리
+    private bool hasPlayedSlidingSound = false;
+
     void Start()
     {
         Playerrigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         playerStatus = GetComponent<PlayerStatus>();
         if (playerStatus == null)
@@ -33,17 +41,39 @@ public class PlayerController : MonoBehaviour
             Playerrigidbody.velocity = new Vector2(Playerrigidbody.velocity.x, jumpForce);
             animator.SetBool("IsJump", true);
             animator.SetBool("IsSliding", false);
+
             currentJumpCount++;
+
+            // 점프 횟수에 따라 다른 소리 재생
+            if (audioSource != null)
+            {
+                if (currentJumpCount == 1 && firstJumpSound != null)
+                {
+                    audioSource.PlayOneShot(firstJumpSound);
+                }
+                else if (currentJumpCount == 2 && doubleJumpSound != null)
+                {
+                    audioSource.PlayOneShot(doubleJumpSound);
+                }
+            }
         }
         // 슬라이딩
-        else if (Input.GetKey(KeyCode.X))
+        else if (Input.GetKey(KeyCode.X) && currentJumpCount == 0)
         {
-            animator.SetBool("IsSliding", true);
+            animator.SetBool("IsSliding", true); // 슬라이딩 애니메이션 재생
+
+            if (!hasPlayedSlidingSound && slidingSound != null) // 슬라이딩 소리 추가
+            {
+                audioSource.PlayOneShot(slidingSound);
+                hasPlayedSlidingSound = true;
+            }
         }
         else
         {
             animator.SetBool("IsSliding", false);
+            hasPlayedSlidingSound = false; // 슬라이딩 취소시 사운드 초기화
         }
+
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
