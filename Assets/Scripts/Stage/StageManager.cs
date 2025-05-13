@@ -55,14 +55,15 @@ namespace runner
             float newSpeed = Mathf.Min(10f, 5f + stage);
 
             obstacleSpawner.SetStageParameters(newInterval, newSpeed);
-            TileMover.SetSpeed(newSpeed); //타일 이동 속도 static 방식
+            TileMover.SetSpeed(newSpeed);
 
             foreach (TileSpawner spawner in tileSpawners)
             {
                 if (spawner != null)
-                    spawner.SetSpeed(newSpeed); //각 타일 스포너의 생성 속도
+                    spawner.SetSpeed(newSpeed);
             }
         }
+
         void GameOver()
         {
             Time.timeScale = 0f;
