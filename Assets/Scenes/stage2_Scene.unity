@@ -254,6 +254,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstacleSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: spawnInterval
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1075198152726532501, guid: 1d26a8736c0e4f7489027c703d299586, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 5305725296976158376, guid: 1e3848cd532bd4e448208eb26c5af2b1, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2491746085256508998, guid: c7574da71cf8509429816c7b33193701, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 8302479553342719897, guid: 16afa8e88bc3e4e4aa4faec824f47808, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 2482639115747612319, guid: d7800ad2a8ced7846be566a6bd3407da, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8518296875010240325, guid: ef956e0bf9620624aa98b04b0574e0e6, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 8078650483865969505, guid: 776812e88ac249e489663d958353e49c, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 5030641109226215946, guid: 049be444fa6d1124cb0452268c2e6006, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 5035813900232245950, guid: 72aa93a5bf8e41b40836fee561085538, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 4286831242703835375, guid: 9b09e94fdd3475f40a7cd48ee44c6980, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[10]
+      value: 
+      objectReference: {fileID: 8800331266526884658, guid: 39df3d0a1baf0694cba85db4e2858eb5, type: 3}
+    - target: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
+      propertyPath: obstaclePrefabs.Array.data[11]
+      value: 
+      objectReference: {fileID: 8097762060997704061, guid: e91c1677f2396a34c9219211a4260aed, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
