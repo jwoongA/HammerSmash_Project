@@ -25,6 +25,8 @@ public class PlayerEffect : MonoBehaviour
     private Coroutine magnetCoroutine;
     private Coroutine speedCoroutine;
 
+    private int invincibleStack = 0;
+
     public int score = 0;
 
     private void Awake()
@@ -80,21 +82,19 @@ public class PlayerEffect : MonoBehaviour
     // 무적 상태 처리 코루틴
     private IEnumerator Invincibility(float duration)
     {
-        isInvincible = true;
-        if (hammerObject != null)
-        {
+        SetInvincible(true);
+        if (hammerObject != null)      
             hammerObject.SetActive(true);
-        }
+        
         Debug.Log("무적 시작");
 
         // 지속 시간 동안 대기
         yield return new WaitForSeconds(duration);
 
-        isInvincible = false;
-        if (hammerObject != null)
-        {
+        SetInvincible(false);
+        if (hammerObject != null)      
             hammerObject.SetActive(false);
-        }
+        
         Debug.Log("무적 종료");
     }
 
@@ -114,7 +114,7 @@ public class PlayerEffect : MonoBehaviour
     private IEnumerator SpeedBoost(float duration)
     {
         ObstacleMover.globalSpeedMultiplier = 2f;
-        isInvincible = true;
+        SetInvincible(true);
         ignoreHole = true;
         if (invisiblePlatform != null)
             invisiblePlatform.SetActive(true);
@@ -123,11 +123,22 @@ public class PlayerEffect : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         ObstacleMover.globalSpeedMultiplier = 1f;
-        isInvincible = false;
+        SetInvincible(false);
         ignoreHole = false;
         if (invisiblePlatform != null)
             invisiblePlatform.SetActive(false);
         Debug.Log("질주 끝");
+    }
+
+    // 무적 스태킹
+    private void SetInvincible(bool value)
+    {
+        if (value)
+            invincibleStack++;
+        else
+            invincibleStack = Mathf.Max(0, invincibleStack - 1);
+
+        isInvincible = (invincibleStack > 0);
     }
 
     // 점수
