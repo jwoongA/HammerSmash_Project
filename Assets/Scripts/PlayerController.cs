@@ -58,12 +58,11 @@ public class PlayerController : MonoBehaviour
             }
         }
         // 슬라이딩
-        else if (Input.GetKey(KeyCode.X))
+        else if (Input.GetKey(KeyCode.X) && currentJumpCount == 0)
         {
-            animator.SetBool("IsSliding", true);
+            animator.SetBool("IsSliding", true); // 슬라이딩 애니메이션 재생
 
-            // 사운드 1회만 재생
-            if (!hasPlayedSlidingSound && slidingSound != null)
+            if (!hasPlayedSlidingSound && slidingSound != null) // 슬라이딩 소리 추가
             {
                 audioSource.PlayOneShot(slidingSound);
                 hasPlayedSlidingSound = true;
@@ -72,8 +71,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("IsSliding", false);
-            hasPlayedSlidingSound = false; // X 키에서 손 떼면 다시 재생 가능하게
+            hasPlayedSlidingSound = false; // 슬라이딩 취소시 사운드 초기화
         }
+
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
