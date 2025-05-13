@@ -8,7 +8,7 @@ public class TileSpawner : MonoBehaviour
     public GameObject tilePrefab;
 
     [Header("생성 주기")]
-    public float spawnInterval = 5f;
+    public float spawnInterval = 10f;
 
     [Header("타일 삭제 거리")]
     public float destroyX = -25f;
@@ -21,7 +21,7 @@ public class TileSpawner : MonoBehaviour
 
         SpriteRenderer renderer = tilePrefab.GetComponent<SpriteRenderer>();
         float tileWidth = 8.9f;
-        spawnInterval = tileWidth / 5f; 
+        spawnInterval = tileWidth / 10f; 
 
         float tileSpeed = GameSpeedManager.Instance != null
         ? GameSpeedManager.Instance.GetCurrentSpeed()

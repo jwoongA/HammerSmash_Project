@@ -12,23 +12,22 @@ namespace runner
         [Header("장애물 생성 위치 (순서 중요)")]
         public Transform[] spawnPositions; //개별 스폰포인트 연결
 
-        [Header("이동 속도")]
+        [Header("생성 간격 & 이동 속도")]
+        public float spawnInterval = 0.5f;
         public float obstacleSpeed = 5f;
 
         [Header("장애물 부모 컨테이너")]
         public Transform obstacleContainer;
 
         private int spawnIndex = 0;
-        private float currentSpawnInterval;
+
 
         void Start()
         {
             spawnIndex = 0;
-
-
-            currentSpawnInterval = 1f / obstacleSpeed;
-            InvokeRepeating(nameof(SpawnObstacle), 0f, currentSpawnInterval);
+            InvokeRepeating(nameof(SpawnObstacle), 0f, spawnInterval);
         }
+
 
         void Update()
         {
@@ -59,7 +58,7 @@ namespace runner
 
             foreach (Transform child in obstacleContainer)
             {
-                if (child.position.x < -20f)
+                if (child.position.x < -10f)
                 {
                     toRemove.Add(child);
                 }
@@ -73,10 +72,10 @@ namespace runner
 
         public void SetStageParameters(float interval, float speed)
         {
-            obstacleSpeed = speed;
-            currentSpawnInterval = interval;
             CancelInvoke(nameof(SpawnObstacle));
-            InvokeRepeating(nameof(SpawnObstacle), 0f, currentSpawnInterval);
+            spawnInterval = interval;
+            obstacleSpeed = speed;
+            InvokeRepeating(nameof(SpawnObstacle), 0f, spawnInterval);
         }
     }
 }
