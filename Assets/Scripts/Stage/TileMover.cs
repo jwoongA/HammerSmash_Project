@@ -7,13 +7,20 @@ public class TileMover : MonoBehaviour
     public static float speed = 5f;
     public float destroyX = -25f;
 
+    void Start()
+    {    
+        speed = 5f;
+    }
+
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        float currentSpeed = speed * ObstacleMover.globalSpeedMultiplier;
+        transform.Translate(Vector3.left * currentSpeed * Time.deltaTime);
 
-        float camLeftEdge = Camera.main.transform.position.x - Camera.main.orthographicSize * Camera.main.aspect;
-        if (transform.position.x < camLeftEdge - 10f) 
+        if (transform.position.x < destroyX)
+        {
             Destroy(gameObject);
+        }
     }
 
 

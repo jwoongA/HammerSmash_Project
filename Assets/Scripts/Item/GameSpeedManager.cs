@@ -23,6 +23,7 @@ public class GameSpeedManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+
     private void Update()
     {
         elapsedTime += Time.deltaTime;

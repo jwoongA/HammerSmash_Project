@@ -62,18 +62,14 @@ namespace runner
                 {
                     toRemove.Add(child);
                 }
-                else
-                {
-                    child.Translate(Vector3.left * obstacleSpeed * Time.deltaTime);
-                }
             }
-
 
             foreach (Transform obstacle in toRemove)
             {
                 Destroy(obstacle.gameObject);
             }
         }
+
 
         public void SetStageParameters(float interval, float speed)
         {
