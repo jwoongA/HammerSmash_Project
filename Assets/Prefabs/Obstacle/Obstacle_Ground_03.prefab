@@ -174,5 +174,4 @@ MonoBehaviour:
   obstacleType: 1
   minSpacing: 2
   maxSpacing: 10
-  damage: 10
   spawnIndex: 0
