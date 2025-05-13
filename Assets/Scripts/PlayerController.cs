@@ -11,14 +11,23 @@ public class PlayerController : MonoBehaviour
     public int maxJumpCount = 2; //최대 점프 횟수
     private int currentJumpCount = 0;
 
+    private PlayerStatus playerStatus;
+
     void Start()
     {
         Playerrigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+
+        playerStatus = GetComponent<PlayerStatus>();
+        if (playerStatus == null)
+        {
+
+        }
     }
+
     void Update()
     {
-        //점프
+        // 점프
         if (Input.GetKeyDown(KeyCode.Z) && currentJumpCount < maxJumpCount)
         {
             Playerrigidbody.velocity = new Vector2(Playerrigidbody.velocity.x, jumpForce);
@@ -26,7 +35,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsSliding", false);
             currentJumpCount++;
         }
-        //슬라이딩
+        // 슬라이딩
         else if (Input.GetKey(KeyCode.X))
         {
             animator.SetBool("IsSliding", true);

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,19 +6,21 @@ public class PlayerStatus : MonoBehaviour
 {
     public float maxHP = 100f;              
     public float currentHP;                  
-    public float hpDecreaseRate = 5f;        // ÃÊ´ç °¨¼ÒµÇ´Â Ã¼·Â·®
+    public float hpDecreaseRate = 5f;        // ì´ˆë‹¹ ê°ì†Œë˜ëŠ” ì²´ë ¥ëŸ‰
 
     private Animator animator;               
-    private bool isTakingDamage = false;    
+    private bool isTakingDamage = false;
+    private PlayerEffect effect;
 
     void Start()
     {
         currentHP = maxHP;                 
         animator = GetComponentInChildren<Animator>(); 
+        effect = GetComponent<PlayerEffect>();
     }
     void Update()
     {
-        // ½Ã°£ÀÌ Áö³²¿¡ µû¶ó Ã¼·Â °¨¼Ò
+        // ì‹œê°„ì´ ì§€ë‚¨ì— ë”°ë¼ ì²´ë ¥ ê°ì†Œ
         currentHP -= hpDecreaseRate * Time.deltaTime;
 
         if (currentHP <= 0)
@@ -29,37 +31,44 @@ public class PlayerStatus : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        if (isTakingDamage) return; // ¹«Àû »óÅÂ¸é ¹«½Ã
+        if (effect != null && effect.isInvincible) return; // ì•„ì´í…œ íš¨ê³¼ë¡œ ë¬´ì  ì¤‘ì´ë©´ ë¬´ì‹œ
+        if (isTakingDamage) return; // ë¬´ì  ìƒíƒœë©´ ë¬´ì‹œ
 
-        currentHP -= damage;        // Ã¼·Â °¨¼Ò
-        isTakingDamage = true;      // ¹«Àû »óÅÂ·Î ¼³Á¤
+        currentHP -= damage;        // ì²´ë ¥ ê°ì†Œ
+        isTakingDamage = true;      // ë¬´ì  ìƒíƒœë¡œ ì„¤ì •
 
         if (animator != null)
             animator.SetBool("IsDamage", true);
 
-        Invoke("EndDamage", 0.5f); // ¹«Àû½Ã°£ 0.5ÃÊ
+        Invoke("EndDamage", 0.5f); // ë¬´ì ì‹œê°„ 0.5ì´ˆ
 
         if (currentHP <= 0)
         {
             Die();
         }
     }
-    void EndDamage() // µ¥¹ÌÁö ÀÌ ÈÄ ¹«ÀûÆÇÁ¤ Á¦°Å
+    void EndDamage() // ë°ë¯¸ì§€ ì´ í›„ ë¬´ì íŒì • ì œê±°
     {
         if (animator != null)
             animator.SetBool("IsDamage", false);
         isTakingDamage = false;
     }
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-        //if (collision.gameObject.CompareTag("ÅÂ±× ¹ÌÁ¤")) // Àå¾Ö¹°¿¡ ÅÂ±× ºÎ¿©ÇØ¼­ Æ¯Á¤ ÅÂ±×¿Í ´êÀ¸¸é µ¥¹ÌÁö ÆÇÁ¤
-        //{
-            //GetComponent<PlayerStatus>()?.TakeDamage(20f); // ÃÖ´ë 5¹ø Ãæµ¹½Ã »ç¸Á
-        //}
-    //}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            TakeDamage(20f); // ìµœëŒ€ 5ë²ˆ ì¶©ëŒ ì‹œ ì‚¬ë§
+        }
+        if (other.CompareTag("Obstacle"))
+        {
+            // ë¬´ì  ì¤‘ì—” ì¶©ëŒí•´ë„ TakeDamage ì•ˆ ë¶ˆëŸ¬ì¤Œ
+            if (effect != null && effect.isInvincible) return;
+            TakeDamage(20f);
+        }
+    }
     void Die()
     {
-        //Debug.Log("»ç¸Á½ÃUI Àç»ı¿¹Á¤");
+        //Debug.Log("ì‚¬ë§ì‹œUI ì¬ìƒì˜ˆì •");
     }
 }
 

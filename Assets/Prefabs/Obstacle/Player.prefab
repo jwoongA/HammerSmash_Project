@@ -5007,6 +5007,7 @@ GameObject:
   - component: {fileID: 8669693771271218257}
   - component: {fileID: 8022119872001665265}
   - component: {fileID: 4281142504843361404}
+  - component: {fileID: 5066125180269338138}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5133,6 +5134,24 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 0
   hpDecreaseRate: 5
+--- !u!114 &5066125180269338138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946919367436587565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d325aff125e8214c8326457096ca480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInvincible: 0
+  isMagnetActive: 0
+  ignoreHole: 0
+  invisiblePlatform: {fileID: 0}
+  hammerObject: {fileID: 8817052987712721511}
+  score: 0
 --- !u!1 &8817052987712721511
 GameObject:
   m_ObjectHideFlags: 0

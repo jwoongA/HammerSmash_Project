@@ -17,11 +17,8 @@ namespace runner
         public ObstacleType obstacleType;
 
         [Tooltip("장애물 간 간격 범위")]
-        [SerializeField] private float minSpacing = 2f;
-        [SerializeField] private float maxSpacing = 10f;
-
-        [Header("피격 관련 설정")]
-        [SerializeField] private float damage = 10f;
+        [SerializeField] private float minSpacing = 10f;
+        [SerializeField] private float maxSpacing = 20f;
 
         [SerializeField] private int spawnIndex = 0;
 

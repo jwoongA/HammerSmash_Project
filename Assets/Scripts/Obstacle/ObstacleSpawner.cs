@@ -13,7 +13,7 @@ namespace runner
         public Transform[] spawnPositions; //개별 스폰포인트 연결
 
         [Header("생성 간격 & 이동 속도")]
-        public float spawnInterval = 2f;
+        public float spawnInterval = 20f;
         public float obstacleSpeed = 5f;
 
         [Header("장애물 부모 컨테이너")]
@@ -34,7 +34,7 @@ namespace runner
 
         void SpawnObstacle()
         {
-            if (obstaclePrefabs.Length == 0 || spawnPositions.Length == 0) return;
+
 
             if (spawnIndex >= obstaclePrefabs.Length || spawnIndex >= spawnPositions.Length)
             {
@@ -49,11 +49,6 @@ namespace runner
             GameObject obstacle = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
             obstacle.transform.SetParent(obstacleContainer); //컨테이너 하위로 배치
 
-            if (obstacle.GetComponent<ObstacleMover>() == null)
-            {
-                obstacle.AddComponent<ObstacleMover>();
-            }
-
             spawnIndex++;
         }
 
@@ -67,7 +62,12 @@ namespace runner
                 {
                     toRemove.Add(child);
                 }
+                else
+                {
+                    child.Translate(Vector3.left * obstacleSpeed * Time.deltaTime);
+                }
             }
+
 
             foreach (Transform obstacle in toRemove)
             {
