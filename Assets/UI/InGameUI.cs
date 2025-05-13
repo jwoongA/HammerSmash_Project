@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InGameUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Button jumpButton;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            // 마우스로 누른 것처럼 처리
+            ExecuteEvents.Execute<IPointerClickHandler>(
+                target: jumpButton.gameObject,
+                eventData: new PointerEventData(EventSystem.current),
+                functor: ExecuteEvents.pointerClickHandler
+            );
+        }
     }
 }
