@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace runner
-{
-
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
@@ -22,7 +19,6 @@ namespace runner
                 Destroy(gameObject);
             }
         }
-
         public void GameOver()
         {
             Debug.Log("게임 오버!");
@@ -30,4 +26,4 @@ namespace runner
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-}
+
