@@ -859,7 +859,7 @@ PrefabInstance:
     - target: {fileID: 4327561894902967056, guid: 882f4bc8b8f33ee4c890744eda3d42aa, type: 3}
       propertyPath: obstacleSpawner
       value: 
-      objectReference: {fileID: 1819200750}
+      objectReference: {fileID: 0}
     - target: {fileID: 6172123480819261547, guid: 882f4bc8b8f33ee4c890744eda3d42aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1339,6 +1339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 909708487}
+  - component: {fileID: 909708488}
   m_Layer: 0
   m_Name: Stage 1 Map
   m_TagString: Untagged
@@ -1375,6 +1376,22 @@ Transform:
   - {fileID: 710697798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909708488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909708486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4fbc9f33846d24bb091ae14249ccc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elapsedTime: 0
+  maxTime: 30
+  baseSpeed: 5
+  targetSpeed: 10
 --- !u!1 &933465621
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,17 +3361,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 909708487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1819200750 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5876198540026244694, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
-  m_PrefabInstance: {fileID: 1712432989}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1253e268155ac5b4688ed7f4de170bd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1844437134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4468514495926487146, guid: 91f8464ce545a2e45a5cbcdba51447fb, type: 3}
