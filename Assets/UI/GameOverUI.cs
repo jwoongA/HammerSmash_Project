@@ -39,9 +39,16 @@ public class GameOverUI : BaseUI
    
     public void OnLobbyButtonClicked()
     {
-        Debug.Log("버튼 클릭됨! → 로비로 이동");
-        Time.timeScale = 1f;
-        GameManager.Instance.ChangeState(GameState.Lobby);
+        Debug.Log("버튼 클릭됨! 로비로");
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager 인스턴스가 존재하지 않습니다!");
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            GameManager.Instance.ChangeState(GameState.Lobby);
+        }
     }
    
 }

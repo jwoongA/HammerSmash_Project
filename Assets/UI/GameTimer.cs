@@ -7,9 +7,23 @@ public class GameTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // TMP 컴포넌트 연결
     private float elapsedTime = 0f;
-
+    private bool hasLogged = false; //한번만 디버그 로그 호출
     void Update()
+     
     {
+        
+        if (timerText == null)
+        {
+            Debug.LogWarning("timerText가 연결되어 있지 않습니다!");
+            return;
+        }
+
+        if (!hasLogged)
+        {
+            Debug.Log("GameTimer 작동 중");
+            hasLogged = true;
+        }
+
         elapsedTime += Time.deltaTime;
 
         int minutes = Mathf.FloorToInt(elapsedTime / 60f);

@@ -14,6 +14,7 @@ public class PlayerStatus : MonoBehaviour
     private PlayerEffect effect;
 
     public GameObject gameOverPanel; //사망시 출력할 판넬
+    public bool isFallen = false; // 추락 관련 코드, 중복 호출 방지용
 
     void Start()
     {
@@ -32,6 +33,17 @@ public class PlayerStatus : MonoBehaviour
         {
             currentHP = 0;
             Die();
+        }
+        //추락 확인 코드
+        {
+            // 화면 아래로 떨어졌는지 검사
+            if (!isFallen && transform.position.y < -10f)
+            {
+                isFallen = true;
+                Debug.Log(" 플레이어가 화면 밖으로 떨어짐 → 게임 오버 처리");
+
+                Die();
+            }
         }
     }
     public void TakeDamage(float damage)
@@ -70,6 +82,7 @@ public class PlayerStatus : MonoBehaviour
             if (effect != null && effect.isInvincible) return;
             TakeDamage(20f);
         }
+        
     }
 
     private bool isDead = false;

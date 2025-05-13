@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     StartUI startUI = null;
     InGameUI ingameUI = null;
     LobbyUI lobbyUI = null;
+    GameOverUI gameOverUI = null;
 
     //TheStack theStack = null;
 
@@ -45,6 +46,9 @@ public class UIManager : MonoBehaviour
         lobbyUI = GetComponentInChildren<LobbyUI>(true);
         lobbyUI?.Init(this);
 
+        gameOverUI = GetComponentInChildren<GameOverUI>(true);
+        gameOverUI?.Init(this);
+
         ChangeState(UIState.Start);
     }
 
@@ -54,6 +58,7 @@ public class UIManager : MonoBehaviour
         startUI?.SetActive(currentState);
       //  ingameUI?.SetActive(currentState);
         lobbyUI?.SetActive(currentState);
+        gameOverUI?.SetActive(currentState);
     }
 
     public void OnClickStart()
