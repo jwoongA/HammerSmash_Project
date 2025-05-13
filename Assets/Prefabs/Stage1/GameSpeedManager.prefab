@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6279540139019787344
+--- !u!1 &1508996224442476765
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6172123480819261547}
-  - component: {fileID: 4327561894902967056}
+  - component: {fileID: 8596890191986968591}
+  - component: {fileID: 5674953107048179853}
   m_Layer: 0
-  m_Name: StageManager
+  m_Name: GameSpeedManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6172123480819261547
+--- !u!4 &8596890191986968591
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6279540139019787344}
+  m_GameObject: {fileID: 1508996224442476765}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4327561894902967056
+--- !u!114 &5674953107048179853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6279540139019787344}
+  m_GameObject: {fileID: 1508996224442476765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49405b0af7bfb5043b33feb7a8eca57d, type: 3}
+  m_Script: {fileID: 11500000, guid: bc4fbc9f33846d24bb091ae14249ccc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageDuration: 30
-  obstacleSpawner: {fileID: 1482223390852711578, guid: a087bcc42977048479c08e521a7e4bf7, type: 3}
-  tileMover: {fileID: 0}
+  elapsedTime: 0
+  maxTime: 30
+  baseSpeed: 5
+  targetSpeed: 10

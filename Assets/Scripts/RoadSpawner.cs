@@ -8,10 +8,10 @@ public class RoadSpawner : MonoBehaviour
     public Transform spawnPoint;
 
 
-    [Header("½ºÆù °£°Ý Á¶Àý")]
-    public float initialSpawnInterval = 1.5f;    // ÃÊ±â °£°Ý
-    public float minSpawnInterval = 0.5f;        // ÃÖ¼Ò °£°Ý
-    public float intervalDecreaseDuration = 30f; // ¸î ÃÊ µ¿¾È °£°ÝÀ» ÁÙÀÏÁö
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
+    public float initialSpawnInterval = 1.5f;    // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public float minSpawnInterval = 2f;        // ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public float intervalDecreaseDuration = 60f; // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     private float currentSpawnInterval;
     private float timer = 0f;
@@ -45,7 +45,7 @@ public class RoadSpawner : MonoBehaviour
 
         float tileWidth = GetTileWidth(newTile);
 
-        Destroy(newTile, 10f);
+        Destroy(newTile, 30f);
 
         spawnPoint.position += new Vector3(tileWidth, 0f, 0f);
     }
@@ -59,6 +59,6 @@ public class RoadSpawner : MonoBehaviour
             return renderer.bounds.size.x;
         }
 
-        return 10f; 
+        return 30f; 
     }
 }

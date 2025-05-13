@@ -198,6 +198,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Obstacle_Ground_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1
+        width: 64
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98362d3cc3df85441b0f920e6fe360d3
+      internalID: -340029118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -209,6 +230,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Obstacle_Ground_5: -340029118
       Obstacle_Overhead-mob: -945537739
       Obstacle_Overhead-mob(1): -1553675916
       Obstacle_Overhead-mob(2): -1531924833

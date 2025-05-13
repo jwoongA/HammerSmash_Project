@@ -15,6 +15,12 @@ namespace runner
         [Header("스포너 연결")]
         public ObstacleSpawner obstacleSpawner;
 
+        [Header("타일 스포너들")]
+        public List<TileSpawner> tileSpawners;
+
+        public float gameDuration = 30f;
+        private float gameTimer = 0f;
+
         void Start()
         {
             currentStage = 0;
@@ -23,24 +29,45 @@ namespace runner
 
         void Update()
         {
+            gameTimer += Time.deltaTime;
+
+            if (gameTimer >= gameDuration)
+            {
+                GameOver();
+                return;
+            }
+
+            // 기존 스테이지 로직 유지
             stageTimer += Time.deltaTime;
 
             if (stageTimer >= stageDuration)
             {
-                currentStage++;
                 stageTimer = 0f;
-
+                currentStage++;
                 ApplyStageSettings(currentStage);
             }
         }
 
+
         void ApplyStageSettings(int stage)
         {
-            //예: 스테이지가 올라갈수록 빠르게, 최소 간격 0.5초
             float newInterval = Mathf.Max(0.5f, 2f - 0.3f * stage);
-            float newSpeed = Mathf.Min(10f, 5f + stage); //속도는 최대 10까지 증가
+            float newSpeed = Mathf.Min(10f, 5f + stage);
 
             obstacleSpawner.SetStageParameters(newInterval, newSpeed);
+            TileMover.SetSpeed(newSpeed); //타일 이동 속도 static 방식
+
+            foreach (TileSpawner spawner in tileSpawners)
+            {
+                if (spawner != null)
+                    spawner.SetSpeed(newSpeed); //각 타일 스포너의 생성 속도
+            }
         }
+        void GameOver()
+        {
+            Time.timeScale = 0f;
+            //TODO: 게임오버 UI 띄우기, 씬 전환 등 추가 가능
+        }
+
     }
 }
