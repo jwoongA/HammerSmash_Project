@@ -1310,7 +1310,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2599963462916058552}
   - component: {fileID: 2969325134627823539}
-  - component: {fileID: 6003643915116391274}
   - component: {fileID: 471800610674059138}
   m_Layer: 0
   m_Name: Top
@@ -1332,8 +1331,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5476103824087973254}
-  - {fileID: 2422064717192771478}
   - {fileID: 6096379698319458153}
   - {fileID: 5408692257553234039}
   - {fileID: 8278482607568067576}
@@ -1364,26 +1361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 5
-  targetSpeed: 10
-  maxTime: 30
---- !u!114 &6003643915116391274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5673804216437217009}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfff57466b8ed314e90a9786196eeab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleType: 1
-  minSpacing: 2
-  maxSpacing: 10
-  damage: 10
-  spawnIndex: 0
 --- !u!61 &471800610674059138
 BoxCollider2D:
   m_ObjectHideFlags: 0
