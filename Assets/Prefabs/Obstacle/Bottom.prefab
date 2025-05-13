@@ -792,6 +792,7 @@ GameObject:
   - component: {fileID: 2969325134627823539}
   - component: {fileID: 6003643915116391274}
   - component: {fileID: 471800610674059138}
+  - component: {fileID: 8740510471608818260}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -831,14 +832,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5673804216437217009}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 357a3dd76b0dd14488955410cd431384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 5
-  targetSpeed: 7
-  maxTime: 60
 --- !u!114 &6003643915116391274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +899,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8740510471608818260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673804216437217009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4fbc9f33846d24bb091ae14249ccc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elapsedTime: 0
+  maxTime: 30
+  baseSpeed: 5
+  targetSpeed: 10
 --- !u!1 &5772737960275649718
 GameObject:
   m_ObjectHideFlags: 0
