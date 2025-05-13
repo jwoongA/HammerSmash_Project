@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float jumpForce = 5f; //점프력
+    public float jumpForce = 5f;
+    public float moveSpeed = 5f;
     private Rigidbody2D Playerrigidbody;
     private Animator animator;
 
-    public int maxJumpCount = 2; //최대 점프 횟수
+    public int maxJumpCount = 2;
     private int currentJumpCount = 0;
 
     private PlayerStatus playerStatus;
 
-    public AudioClip firstJumpSound; // 1단 점프 소리
-    public AudioClip doubleJumpSound; // 2단 점프 소리
-    private AudioSource audioSource;
+    public AudioClip firstJumpSound;
+    public AudioClip doubleJumpSound;
+    public AudioClip slidingSound;
 
-    public AudioClip slidingSound; // 슬라이딩 소리
+    private AudioSource audioSource;
     private bool hasPlayedSlidingSound = false;
+
+    private float horizontalInput;
 
     void Start()
     {
@@ -27,14 +30,12 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         playerStatus = GetComponent<PlayerStatus>();
-        if (playerStatus == null)
-        {
-
-        }
     }
 
     void Update()
     {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+
         // 점프
         if (Input.GetKeyDown(KeyCode.Z) && currentJumpCount < maxJumpCount)
         {
@@ -44,7 +45,6 @@ public class PlayerController : MonoBehaviour
 
             currentJumpCount++;
 
-            // 점프 횟수에 따라 다른 소리 재생
             if (audioSource != null)
             {
                 if (currentJumpCount == 1 && firstJumpSound != null)
@@ -60,9 +60,9 @@ public class PlayerController : MonoBehaviour
         // 슬라이딩
         else if (Input.GetKey(KeyCode.X) && currentJumpCount == 0)
         {
-            animator.SetBool("IsSliding", true); // 슬라이딩 애니메이션 재생
+            animator.SetBool("IsSliding", true);
 
-            if (!hasPlayedSlidingSound && slidingSound != null) // 슬라이딩 소리 추가
+            if (!hasPlayedSlidingSound && slidingSound != null)
             {
                 audioSource.PlayOneShot(slidingSound);
                 hasPlayedSlidingSound = true;
@@ -71,10 +71,16 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("IsSliding", false);
-            hasPlayedSlidingSound = false; // 슬라이딩 취소시 사운드 초기화
+            hasPlayedSlidingSound = false;
         }
-
     }
+    void FixedUpdate()
+    {
+
+        Vector2 newVelocity = new Vector2(horizontalInput * moveSpeed, Playerrigidbody.velocity.y);
+        Playerrigidbody.velocity = newVelocity;
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
