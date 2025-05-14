@@ -146,6 +146,6 @@ public class PlayerEffect : MonoBehaviour
     {
         score += addscore;
         Debug.Log($"점수 {addscore} 획득");
-        ScoreManager.TrySetNewHighScore(score);
+        //ScoreManager.TrySetNewHighScore(score);
     }
 }

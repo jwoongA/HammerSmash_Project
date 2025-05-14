@@ -7,14 +7,12 @@ using TMPro;
 public class PauseManager : MonoBehaviour
 {
     public Button stopButton;
-    public TextMeshProUGUI buttonText;
 
     private bool isPaused = false;
 
     void Start()
     {
-        stopButton.onClick.AddListener(TogglePause);
-        UpdateButtonText();
+        stopButton.onClick.AddListener(TogglePause);  
     }
 
     public void TogglePause()
@@ -37,14 +35,5 @@ public class PauseManager : MonoBehaviour
 
             
         }
-
-
-        UpdateButtonText();
-    }
-
-    void UpdateButtonText()
-    {
-        if (buttonText != null)
-            buttonText.text = isPaused ? "restart" : "stop";
     }
 }

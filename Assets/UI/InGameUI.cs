@@ -4,8 +4,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InGameUI : MonoBehaviour
+public class InGameUI : BaseUI
 {
+    public override void SetActive(UIState state)
+    {
+        Debug.Log("SetActive »£√‚µ ");
+        base.SetActive(state);
+
+    }
+
+    protected override UIState GetUIState()
+    {
+        return UIState.InGame;
+    }
+
     public Button jumpButton;
 
     void Update()

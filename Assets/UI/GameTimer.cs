@@ -6,8 +6,13 @@ using TMPro;
 public class GameTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // TMP 컴포넌트 연결
-    private float elapsedTime = 0f;
+    public float elapsedTime = 0f;
+    public float GetElapsedTime()
+    {
+        return elapsedTime;
+    }
     private bool hasLogged = false; //한번만 디버그 로그 호출
+    
     void Update()
      
     {

@@ -104,6 +104,19 @@ public class PlayerStatus : MonoBehaviour
         Debug.Log("사망! 게임 오버 UI 출력");
         Time.timeScale = 0f;
 
+        // 점수와 시간 저장
+        var effect = GetComponent<PlayerEffect>();
+        var timer = FindObjectOfType<GameTimer>();
+
+        if (effect != null && timer != null)
+        {
+            ScoreDataBuffer.FinalScore = effect.score;
+            ScoreDataBuffer.FinalTime = timer.GetElapsedTime();
+
+            ScoreManager.TrySetNewHighScore(effect.score);
+            ScoreManager.TrySetNewBestTime(timer.GetElapsedTime());
+        }
+
         //맵생성 중지
         gameSpeedManager.enabled = false;
 
@@ -111,6 +124,13 @@ public class PlayerStatus : MonoBehaviour
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
+
+            // 명시적으로 점수 반영!
+            var display = gameOverPanel.GetComponent<GameOverScoreDisplay>();
+            if (display != null)
+            {
+                display.ShowScore();
+            }
         }
     }
 }

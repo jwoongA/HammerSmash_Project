@@ -8,8 +8,6 @@ using TMPro;
 
 public class GameOverUI : BaseUI
 {
-    public TextMeshProUGUI finalScoreText;
-    public TextMeshProUGUI bestScoreText;
     public Button restartButton;
     public Button lobbyButton;
 
@@ -33,16 +31,6 @@ public class GameOverUI : BaseUI
             Debug.LogWarning("Start Button이 연결되지 않았습니다.");
         }
 
-    }
-    public void ShowScore()
-    {
-        var effect = FindObjectOfType<PlayerEffect>();
-        if (effect != null)
-        {
-            int finalScore = effect.score;
-            finalScoreText.text = $"SCORE : {finalScore:D4}";
-            bestScoreText.text = $"BEST : {ScoreManager.GetHighScore():D4}";
-        }
     }
 
     public void OnRestartButtonClicked()
