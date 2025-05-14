@@ -16,16 +16,16 @@ public class ItemSound : MonoBehaviour
 
     private void Awake()
     {
-        // 싱글톤 패턴 적용 (중복 방지)
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // 필요시
-        }
-        else
+        // 이미 존재하면 파괴
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        // 싱글톤 설정
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     public void PlaySound(Item.ItemType itemType)
     {
