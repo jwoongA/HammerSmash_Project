@@ -347,6 +347,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2574008323323085366, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4497676767998117715, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
       propertyPath: m_Size.y
       value: 1.3687806
@@ -414,6 +418,14 @@ PrefabInstance:
     - target: {fileID: 8630981368315989324, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
       propertyPath: m_SortingOrder
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983432247971046608, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983432247971046608, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -765,6 +777,7 @@ GameObject:
   - component: {fileID: 1394797380}
   - component: {fileID: 1394797384}
   - component: {fileID: 1394797383}
+  - component: {fileID: 1394797385}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -871,7 +884,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -955,6 +968,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1394797385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394797379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5317608e4afb94e951ac0b57b20ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetClip: {fileID: 0}
+  smallHealClip: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
+  largeHealClip: {fileID: 8300000, guid: b1b9c1f0ea1fcae439ed1a4d44ff05fd, type: 3}
+  fastRunClip: {fileID: 8300000, guid: 7b5b58ee8241b1d4fbc2f0c8711861ae, type: 3}
+  hammerTimeClip: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
+  coinClip: {fileID: 8300000, guid: e80e8d182eb074743b7d258fec4bb936, type: 3}
 --- !u!1 &1432140395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7689455848639094306, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
@@ -1002,6 +1033,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage1ItemsStruct
       objectReference: {fileID: 0}
+    - target: {fileID: 7629416199693694065, guid: 0179e2fbfe670fb42a41290104538a44, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915357587863004385, guid: 0179e2fbfe670fb42a41290104538a44, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9168138045442465287, guid: 0179e2fbfe670fb42a41290104538a44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 190
@@ -1042,7 +1081,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3755564584777525035, guid: 0179e2fbfe670fb42a41290104538a44, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1634,6 +1674,10 @@ PrefabInstance:
     - target: {fileID: 2600649454367552793, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546935510701506636, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7689455848639094306, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
       propertyPath: m_IsActive

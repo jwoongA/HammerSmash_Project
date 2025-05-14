@@ -26,6 +26,13 @@ public class Item : MonoBehaviour
         {
             effect.ApplyItemEffect(itemType);
         }
+
+        // 사운드 재생 요청 (아이템 사운드에게)
+        if (ItemSound.Instance != null)
+        {
+            ItemSound.Instance.PlaySound(itemType);
+        }
+
         // 아이템은 획득 후 제거
         Destroy(gameObject);
     }
