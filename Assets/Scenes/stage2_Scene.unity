@@ -1088,6 +1088,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 19479789655514506, guid: 11797f4e56e62954ca76615cf4886530, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 19479789655514506, guid: 11797f4e56e62954ca76615cf4886530, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -5.5
       objectReference: {fileID: 0}
@@ -1190,6 +1194,10 @@ PrefabInstance:
     - target: {fileID: 7952907485476108656, guid: 11797f4e56e62954ca76615cf4886530, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215418585906175850, guid: 11797f4e56e62954ca76615cf4886530, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8764970056764799431, guid: 11797f4e56e62954ca76615cf4886530, type: 3}
       propertyPath: m_IsActive
