@@ -18,7 +18,10 @@ public class ScoreUI : MonoBehaviour
     {
         if (playerEffect != null && scoreText != null)
         {
-            scoreText.text = $"SCORE : {playerEffect.score.ToString("D4")}";
+            scoreText.text = $"{playerEffect.score.ToString("D4")}";
+
+
+
         }
     }
 }

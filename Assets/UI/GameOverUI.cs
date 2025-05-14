@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using runner;
+using TMPro;
 
 public class GameOverUI : BaseUI
 {
     public Button restartButton;
     public Button lobbyButton;
+
 
     protected override UIState GetUIState()
     {
@@ -30,6 +32,7 @@ public class GameOverUI : BaseUI
         }
 
     }
+
     public void OnRestartButtonClicked()
     {
         Debug.Log("버튼 클릭됨! → 게임 재시작");

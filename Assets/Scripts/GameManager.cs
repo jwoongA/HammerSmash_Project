@@ -11,7 +11,8 @@ public enum GameState
     Lobby,
     InGame,
     GameOver,
-    Stage1Clear
+    Stage1Clear,
+    GameClear
 }
 public class GameManager : MonoBehaviour
 {
@@ -84,7 +85,13 @@ public class GameManager : MonoBehaviour
             case GameState.Stage1Clear:
                 Debug.Log("Loding2_Scene 이동 중");
                 targetScene = "Loding2_Scene";
-           
+                break;
+            case GameState.GameClear:
+                Debug.Log("LobbyScene으로 이동 중");
+                targetScene = "LobbyScene";
+
+
+
                 break;
         }
         Debug.Log($"{newState} → {targetScene} 로 이동 중");

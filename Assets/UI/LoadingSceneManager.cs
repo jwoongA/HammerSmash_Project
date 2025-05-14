@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class LoadingSceneManager : MonoBehaviour
 {
     public string nextSceneName = "Stage1_Scene"; // 이동할 진짜 게임 씬
-    public float waitSeconds = 3f;
+    public float waitSeconds = 2f;
 
     void Start()
     {

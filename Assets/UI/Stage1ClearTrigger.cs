@@ -41,10 +41,28 @@ public class Stage1ClearTrigger : MonoBehaviour
             Debug.Log("충돌 감지! 스테이지 클리어!");
             Time.timeScale = 0f;
 
+            HandleGameClear();
+
             if (clearUI != null)
                 clearUI.SetActive(true);
         }
     }
 
-   
+    void HandleGameClear()
+    {
+        var effect = FindObjectOfType<PlayerEffect>();
+        var timer = FindObjectOfType<GameTimer>();
+
+        if (effect != null && timer != null)
+        {
+            ScoreDataBuffer.FinalScore = effect.score;
+            ScoreDataBuffer.FinalTime = timer.GetElapsedTime();
+
+            ScoreManager.TrySetNewHighScore(effect.score);
+            ScoreManager.TrySetNewBestTime(timer.GetElapsedTime());
+            Debug.Log($"클리어 시점 저장됨! 점수: {effect.score}, 시간: {timer.GetElapsedTime():F2}");
+        }
+
+        
+    }
 }
