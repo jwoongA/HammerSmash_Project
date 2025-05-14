@@ -16,14 +16,22 @@ public class GameTimer : MonoBehaviour
 
         if (currentScene == "Stage1_Scene" || currentScene == "Loding2_Scene" || currentScene == "Stage2_Scene")
         {
-            elapsedTime = ScoreDataBuffer.CurrentTime;
-            Debug.Log($"[GameTimer] 이전 시간 유지됨: {elapsedTime:F2}s");
+            if (ScoreDataBuffer.CurrentTime > 0f)
+            {
+                elapsedTime = ScoreDataBuffer.CurrentTime;
+                Debug.Log($"[GameTimer] 이전 시간 유지됨: {elapsedTime:F2}s");
+            }
+            else
+            {
+                elapsedTime = 0f;
+                Debug.Log("[GameTimer] 새로운 스테이지 → 시간 초기화됨");
+            }
         }
         else
         {
             elapsedTime = 0f;
             ScoreDataBuffer.CurrentTime = 0f;
-            Debug.Log("[GameTimer] 시간 초기화됨");
+            Debug.Log("[GameTimer] 다른 씬 진입 → 시간 초기화됨");
         }
     }
     public float GetElapsedTime()

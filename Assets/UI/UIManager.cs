@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log($"[ScoreUI - 스테이지2] 진입 시 CurrentScore: {ScoreDataBuffer.CurrentScore}");
         Debug.Log("UIManager.Awake(): 호출됨");
         instance = this;
 
