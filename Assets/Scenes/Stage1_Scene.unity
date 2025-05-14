@@ -1738,6 +1738,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 125
       objectReference: {fileID: 0}
+    - target: {fileID: 4665957235120754946, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665957235120754946, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665957235120754946, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7546935510701506636, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
       propertyPath: m_IsActive
       value: 0
