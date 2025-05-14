@@ -31,13 +31,13 @@ public class UIManager : MonoBehaviour
     LobbyUI lobbyUI = null;
     GameOverUI gameOverUI = null;
     Stage1ClearUI stage1ClearUI = null;
-    GameClearUI gameClear = null;
+    GameClearUI gameClearUI = null;
 
     //TheStack theStack = null;
 
     private void Awake()
     {
-        Debug.Log("ㅇㅇ");
+        Debug.Log("UIManager.Awake(): 호출됨");
         instance = this;
 
         startUI = GetComponentInChildren<StartUI>(true); //꺼져있는 오브젝트도 찾아내게끔. 트루로.
@@ -55,10 +55,10 @@ public class UIManager : MonoBehaviour
         stage1ClearUI = GetComponentInChildren<Stage1ClearUI>(true);
         stage1ClearUI?.Init(this);
 
+        gameClearUI = GetComponentInChildren<GameClearUI>(true);
+        gameClearUI?.Init(this);
 
-        //gameClear = GetComponentInChildren<GameClearUI>(true);
-        //gameClear?.Init(this); 
-
+        Debug.Log("UIManager.Awake(): UI 초기화 완료");
         ChangeState(UIState.Start);
     }
 
@@ -70,6 +70,7 @@ public class UIManager : MonoBehaviour
         lobbyUI?.SetActive(currentState);
         gameOverUI?.SetActive(currentState);
         stage1ClearUI?.SetActive(currentState);
+        gameClearUI?.SetActive(currentState);
     }
 
     public void OnClickStart()
