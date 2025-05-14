@@ -33,6 +33,8 @@ public class PlayerEffect : MonoBehaviour
     {
         if (status == null)
             status = GetComponent<PlayerStatus>();
+
+        ObstacleMover.globalSpeedMultiplier = 1f;
     }
 
     // 아이템 종류에 따라 효과를 분기 처리
