@@ -27,6 +27,12 @@ public class GameTimer : MonoBehaviour
                 Debug.Log("[GameTimer] 새로운 스테이지 → 시간 초기화됨");
             }
         }
+        //if (currentScene == "LobbyScene")
+        //{
+        //    elapsedTime = 0f;
+        //    ScoreDataBuffer.CurrentTime = 0f;
+        //    Debug.Log("[GameTimer] 로비입장 → 시간 초기화됨");
+        //}
         else
         {
             elapsedTime = 0f;
