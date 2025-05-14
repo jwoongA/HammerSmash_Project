@@ -8,7 +8,7 @@ using TMPro;
 
 public class GameOverUI : BaseUI
 {
-    public Button restartButton;
+    
     public Button lobbyButton;
 
 
@@ -21,9 +21,9 @@ public class GameOverUI : BaseUI
     {
         base.Init(uiManager);
 
-        if (restartButton != null)
+        if (lobbyButton != null)
         {
-            restartButton.onClick.AddListener(OnRestartButtonClicked);
+           //restartButton.onClick.AddListener(OnRestartButtonClicked);
             lobbyButton.onClick.AddListener(OnLobbyButtonClicked);
         }
         else

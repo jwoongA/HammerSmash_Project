@@ -14,6 +14,15 @@ public class ScoreUI : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         Debug.Log($"[ScoreUI] 현재 씬 이름: {currentScene}");
 
+        if (currentScene == "Stage1_Scene")
+        {
+            playerEffect.score = 0;
+            ScoreDataBuffer.CurrentScore = 0;
+            ScoreDataBuffer.FinalScore = 0;
+            ScoreDataBuffer.FinalTime = 0f;
+            Debug.Log("[ScoreUI] Stage1 진입 → 점수/시간 완전 초기화");
+        }
+
         if (currentScene == "LobbyScene")
         {
             playerEffect.score = 0;
