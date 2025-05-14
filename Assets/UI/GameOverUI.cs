@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using runner;
+using TMPro;
 
 public class GameOverUI : BaseUI
 {
+    public TextMeshProUGUI finalScoreText;
+    public TextMeshProUGUI bestScoreText;
     public Button restartButton;
     public Button lobbyButton;
+
 
     protected override UIState GetUIState()
     {
@@ -30,6 +34,17 @@ public class GameOverUI : BaseUI
         }
 
     }
+    public void ShowScore()
+    {
+        var effect = FindObjectOfType<PlayerEffect>();
+        if (effect != null)
+        {
+            int finalScore = effect.score;
+            finalScoreText.text = $"SCORE : {finalScore:D4}";
+            bestScoreText.text = $"BEST : {ScoreManager.GetHighScore():D4}";
+        }
+    }
+
     public void OnRestartButtonClicked()
     {
         Debug.Log("버튼 클릭됨! → 게임 재시작");
