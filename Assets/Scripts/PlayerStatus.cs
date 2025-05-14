@@ -13,6 +13,9 @@ public class PlayerStatus : MonoBehaviour
     private bool isTakingDamage = false;
     private PlayerEffect effect;
 
+    public AudioClip hitSound;
+    private AudioSource audioSource;
+
     public GameObject gameOverPanel; //사망시 출력할 판넬
     public bool isFallen = false; // 추락 관련 코드, 중복 호출 방지용
     private StageManager stageManager;
@@ -34,6 +37,13 @@ public class PlayerStatus : MonoBehaviour
         obstacleSpawner = FindObjectOfType<ObstacleSpawner>();
         roadSpawner = FindObjectOfType<RoadSpawner>();
         gameSpeedManager = FindObjectOfType<GameSpeedManager>();
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
     }
     void Update()
     {
@@ -69,6 +79,11 @@ public class PlayerStatus : MonoBehaviour
             animator.SetBool("IsDamage", true);
 
         Invoke("EndDamage", 0.5f); // 무적시간 0.5초
+
+        if (hitSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
 
         if (currentHP <= 0)
         {

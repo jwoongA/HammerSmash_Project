@@ -336,6 +336,10 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1999182998123921123, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 321a88f5f4f0da044bf067289a12e654, type: 3}
+    - target: {fileID: 1999182998123921123, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1432140395}
