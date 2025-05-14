@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreUI : MonoBehaviour
 {
@@ -10,8 +11,37 @@ public class ScoreUI : MonoBehaviour
 
     void Start()
     {
-        if (scoreText != null)
-            scoreText.text = "SCORE : 0";
+        string currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log($"[ScoreUI] 현재 씬 이름: {currentScene}");
+
+        if (currentScene == "LobbyScene")
+        {
+            playerEffect.score = 0;
+            ScoreDataBuffer.CurrentScore = 0;
+            Debug.Log("[ScoreUI] 로비 진입 → 점수 초기화됨");
+        }
+        else if (currentScene == "Stage1_Scene" || currentScene == "Loding2_Scene" || currentScene == "Stage2_Scene")
+        {
+            if (ScoreDataBuffer.CurrentScore > 0)
+            {
+                playerEffect.score = ScoreDataBuffer.CurrentScore;
+                Debug.Log($"[ScoreUI] 이전 점수 유지됨: {playerEffect.score}");
+            }
+            else
+            {
+                playerEffect.score = 0;
+                Debug.Log("[ScoreUI] 새로운 스테이지 → 점수 초기화됨");
+            }
+        }
+        else
+        {
+            Debug.Log("[ScoreUI] 유지 대상 외 씬 → 점수 유지");
+        }
+
+        //if (scoreText != null && playerEffect != null)
+        //{
+        //    scoreText.text = $"{playerEffect.score.ToString("D4")}";
+        //}
     }
 
     void Update()
@@ -19,9 +49,7 @@ public class ScoreUI : MonoBehaviour
         if (playerEffect != null && scoreText != null)
         {
             scoreText.text = $"{playerEffect.score.ToString("D4")}";
-
-
-
+            ScoreDataBuffer.CurrentScore = playerEffect.score;
         }
     }
 }
