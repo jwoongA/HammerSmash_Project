@@ -986,7 +986,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 874a9c6119b5ea64c9b2bac6df78962e, type: 3}
     - target: {fileID: 5248132775585126471, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8630981368315989324, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
       propertyPath: m_SortingOrder
@@ -1225,6 +1225,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d325aff125e8214c8326457096ca480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1861432707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1999182998123921123, guid: 21393ec8440b8ed439c91a1c16be7f46, type: 3}
+  m_PrefabInstance: {fileID: 1861432696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861432697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151f8b8c82563fa4d9427caf1ed43d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &23694928560549220
@@ -1693,6 +1704,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7372549345092465066, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1861432707}
     - target: {fileID: 9154356725826033371, guid: 461c89291945a7a4c8a2860c26b63e65, type: 3}
       propertyPath: m_Name
       value: StageUICanvas
