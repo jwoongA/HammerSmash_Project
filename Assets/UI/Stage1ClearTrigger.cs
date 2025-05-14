@@ -62,13 +62,11 @@ public class Stage1ClearTrigger : MonoBehaviour
             ScoreDataBuffer.CurrentScore = ScoreDataBuffer.FinalScore;
             ScoreDataBuffer.CurrentTime = ScoreDataBuffer.FinalTime;
 
-
             ScoreManager.TrySetNewHighScore(effect.score);
             ScoreManager.TrySetNewBestTime(timer.GetElapsedTime());
+
             Debug.Log($"클리어 시점 저장됨! 점수: {effect.score}, 시간: {timer.GetElapsedTime():F2}");
             Debug.Log($"[StageClear] 계승용 CurrentScore 설정 완료: {ScoreDataBuffer.CurrentScore}, {ScoreDataBuffer.CurrentTime:F2}");
         }
-
-        
     }
 }
