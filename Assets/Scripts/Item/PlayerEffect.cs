@@ -27,7 +27,7 @@ public class PlayerEffect : MonoBehaviour
 
     private int invincibleStack = 0;
 
-    public int score = 0;
+    public int score;
 
     private void Awake()
     {

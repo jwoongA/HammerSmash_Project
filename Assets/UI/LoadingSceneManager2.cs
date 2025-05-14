@@ -10,6 +10,7 @@ public class LoadingSceneManager2 : MonoBehaviour
 
     void Start()
     {
+        Debug.Log($"[ScoreUI - 로딩2] 진입 시 CurrentScore: {ScoreDataBuffer.CurrentScore}");
         StartCoroutine(LoadSceneAfterDelay());
     }
 
