@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 1394797380}
   - component: {fileID: 1394797383}
   - component: {fileID: 1394797384}
+  - component: {fileID: 1394797385}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -383,6 +384,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmClip: {fileID: 8300000, guid: fc5af015011ea3745b7f78ea1dd1049f, type: 3}
+--- !u!114 &1394797385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394797379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5317608e4afb94e951ac0b57b20ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetClip: {fileID: 0}
+  smallHealClip: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
+  largeHealClip: {fileID: 8300000, guid: b1b9c1f0ea1fcae439ed1a4d44ff05fd, type: 3}
+  fastRunClip: {fileID: 8300000, guid: 7b5b58ee8241b1d4fbc2f0c8711861ae, type: 3}
+  hammerTimeClip: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
+  coinClip: {fileID: 8300000, guid: e80e8d182eb074743b7d258fec4bb936, type: 3}
 --- !u!1001 &2092372144
 PrefabInstance:
   m_ObjectHideFlags: 0
