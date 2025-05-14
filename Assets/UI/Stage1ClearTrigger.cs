@@ -10,7 +10,7 @@ public class Stage1ClearTrigger : MonoBehaviour
 
     [Header("대상 연결")]
     public Transform playerTransform;       // Player (1)
-    public Transform goalTransform;         // Square (GameObject 15 안)
+    public Transform goalTransform;         // Square (GameObject 15 안) / 엑시트 팻말로 바뀜.
     public GameObject clearUI;              // 클리어 UI 패널
 
     private bool isCleared = false;
@@ -44,7 +44,21 @@ public class Stage1ClearTrigger : MonoBehaviour
             HandleGameClear();
 
             if (clearUI != null)
-                clearUI.SetActive(true);
+            {
+                clearUI.SetActive(true); // UI 활성화
+
+                //  UI 내 점수표시 컴포넌트를 수동으로 호출
+                var display = clearUI.GetComponentInChildren<GameClearScoreDisplay>();
+                if (display != null)
+                {
+                    display.ShowScore(); //  시점 문제 해결 핵심 코드
+                    Debug.Log("[Stage1ClearTrigger] ShowScore() 수동 호출 완료");
+                }
+                else
+                {
+                    Debug.LogWarning("GameClearScoreDisplay 컴포넌트를 찾을 수 없습니다!");
+                }
+            }
         }
     }
 
@@ -55,18 +69,22 @@ public class Stage1ClearTrigger : MonoBehaviour
 
         if (effect != null && timer != null)
         {
+            //  Final 데이터 저장
             ScoreDataBuffer.FinalScore = effect.score;
             ScoreDataBuffer.FinalTime = timer.GetElapsedTime();
 
-            // Stage2로 넘길 값 지정
+            //  Stage3 또는 이후를 위한 계승 데이터도 저장
             ScoreDataBuffer.CurrentScore = ScoreDataBuffer.FinalScore;
             ScoreDataBuffer.CurrentTime = ScoreDataBuffer.FinalTime;
 
             ScoreManager.TrySetNewHighScore(effect.score);
             ScoreManager.TrySetNewBestTime(timer.GetElapsedTime());
 
-            Debug.Log($"클리어 시점 저장됨! 점수: {effect.score}, 시간: {timer.GetElapsedTime():F2}");
-            Debug.Log($"[StageClear] 계승용 CurrentScore 설정 완료: {ScoreDataBuffer.CurrentScore}, {ScoreDataBuffer.CurrentTime:F2}");
+            Debug.Log($"[Stage1ClearTrigger] 클리어 시점 저장됨 → 점수: {effect.score}, 시간: {timer.GetElapsedTime():F2}");
+        }
+        else
+        {
+            Debug.LogWarning("PlayerEffect 또는 GameTimer를 찾지 못했습니다.");
         }
     }
 }

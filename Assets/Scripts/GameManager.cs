@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public GameState CurrentState { get; private set; }
 
-    public GameObject gameOverUIPrefab; // ÀÎ½ºÆåÅÍ¿¡ ¿¬°áÇÒ °ÔÀÓ ¿À¹ö UI ÇÁ¸®ÆÕ
+    public GameObject gameOverUIPrefab; // ì¸ìŠ¤í™í„°ì— ì—°ê²°í•  ê²Œì„ ì˜¤ë²„ UI í”„ë¦¬íŒ¹
     private GameObject currentGameOverUI;
 
     void Awake()
@@ -40,14 +40,14 @@ public class GameManager : MonoBehaviour
     //{
     //    if (Instance != null && Instance != this)
     //    {
-    //        Debug.Log("Áßº¹ GameManager ¹ß°ß ¡æ »èÁ¦µÊ");
+    //        Debug.Log("ì¤‘ë³µ GameManager ë°œê²¬ â†’ ì‚­ì œë¨");
     //        Destroy(gameObject);
     //        return;
     //    }
 
     //    Instance = this;
     //    DontDestroyOnLoad(gameObject);
-    //    Debug.Log("GameManager »ı¼º + »ıÁ¸ µî·Ï");
+    //    Debug.Log("GameManager ìƒì„± + ìƒì¡´ ë“±ë¡");
     //}
 
     private void Start()
@@ -64,55 +64,69 @@ public class GameManager : MonoBehaviour
         CurrentState = newState;
         string targetScene = "";
 
+        if (newState == GameState.InGame)
+        {
+            StartCoroutine(DelayedSpeedReset());
+        }
+
         switch (newState)
         {
             case GameState.Start:
-                Debug.Log("StartSceneÀ¸·Î ÀÌµ¿ Áß");
+                Debug.Log("StartSceneìœ¼ë¡œ ì´ë™ ì¤‘");
                 targetScene = "StartScene";
                 break;
             case GameState.Lobby:
-                Debug.Log("LobbySceneÀ¸·Î ÀÌµ¿ Áß");
+                Debug.Log("LobbySceneìœ¼ë¡œ ì´ë™ ì¤‘");
                 targetScene = "LobbyScene";
                 break;
             case GameState.InGame:
-                Debug.Log("Loding1_SceneÀ¸·Î ÀÌµ¿ Áß");
-                targetScene = "Loding1_Scene"; // ±âÁ¸ Stage1_Scene ¡æ º¯°æ
+                Debug.Log("Loding1_Sceneìœ¼ë¡œ ì´ë™ ì¤‘");                
+                targetScene = "Loding1_Scene"; // ê¸°ì¡´ Stage1_Scene â†’ ë³€ê²½
                 break;
             case GameState.GameOver:
-                Debug.Log("GameOverSceneÀ¸·Î ÀÌµ¿ Áß");
+                Debug.Log("GameOverSceneìœ¼ë¡œ ì´ë™ ì¤‘");
                 targetScene = "GameOverScene";
                 break;
             case GameState.Stage1Clear:
-                Debug.Log("Loding2_Scene ÀÌµ¿ Áß");
+                Debug.Log("Loding2_Scene ì´ë™ ì¤‘");
                 targetScene = "Loding2_Scene";
                 break;
             case GameState.GameClear:
-                Debug.Log("LobbySceneÀ¸·Î ÀÌµ¿ Áß");
+                Debug.Log("LobbySceneìœ¼ë¡œ ì´ë™ ì¤‘");
                 targetScene = "LobbyScene";
 
 
 
                 break;
         }
-        Debug.Log($"{newState} ¡æ {targetScene} ·Î ÀÌµ¿ Áß");
+        Debug.Log($"{newState} â†’ {targetScene} ë¡œ ì´ë™ ì¤‘");
         SceneManager.LoadScene(targetScene);
         //Stage1_Scene
     }
 
     public void GameOver()
     {
-        Debug.Log("°ÔÀÓ ¿À¹ö!");
-        Time.timeScale = 0f; // °ÔÀÓ Á¤Áö
+        Debug.Log("ê²Œì„ ì˜¤ë²„!");
+        Time.timeScale = 0f; // ê²Œì„ ì •ì§€
         if (gameOverUIPrefab != null && currentGameOverUI == null)
         {
             currentGameOverUI = Instantiate(gameOverUIPrefab);
         }
-        // ¿¹: ÇöÀç ¾ÀÀ» ´Ù½Ã ·Îµå (¸®Æ®¶óÀÌ)
+        // ì˜ˆ: í˜„ì¬ ì”¬ì„ ë‹¤ì‹œ ë¡œë“œ (ë¦¬íŠ¸ë¼ì´)
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ExitGame()
     {
-        Debug.Log("°ÔÀÓ Á¾·á");
+        Debug.Log("ê²Œì„ ì¢…ë£Œ");
         Application.Quit();
+    }
+
+    private IEnumerator DelayedSpeedReset()
+    {
+        yield return new WaitForSeconds(0.1f); // ì•½ê°„ì˜ ëŒ€ê¸°
+        if (GameSpeedManager.Instance != null)
+        {
+            GameSpeedManager.Instance.ResetSpeed();
+        }
     }
 }
