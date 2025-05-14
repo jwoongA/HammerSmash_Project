@@ -133,7 +133,7 @@ public class PlayerStatus : MonoBehaviour
         }
 
         //맵생성 중지
-        gameSpeedManager.enabled = false;
+       // gameSpeedManager.enabled = false;
 
 
         if (gameOverPanel != null)
