@@ -96,4 +96,16 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
+    public GameObject gameClearUI; // 인스펙터에서 연결
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Exit"))
+        {
+            Time.timeScale = 0f; // 일시 정지 (선택사항)
+            gameClearUI.SetActive(true); // 게임 클리어 UI 띄움
+        }
+    }
 }

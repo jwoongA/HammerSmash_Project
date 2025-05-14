@@ -42,6 +42,7 @@ public class GameOverUI : BaseUI
         Debug.Log("버튼 클릭됨! 로비로");
         if (GameManager.Instance == null)
         {
+            SceneManager.LoadScene("LobbyScene");
             Debug.LogError("GameManager 인스턴스가 존재하지 않습니다!");
         }
         else
