@@ -12,6 +12,8 @@ public class GameClearScoreDisplay : MonoBehaviour
 
     public void ShowScore()
     {
+        Debug.Log($"[GameClearScoreDisplay] ShowScore »£√‚µ ");
+        Debug.Log($"[GameClearScoreDisplay] FinalScore: {ScoreDataBuffer.FinalScore}, FinalTime: {ScoreDataBuffer.FinalTime:F2}");
         finalScoreText.text = $"{ScoreDataBuffer.FinalScore:D4}";
         bestScoreText.text = $"{ScoreManager.GetHighScore():D4}";
         finalTimeText.text = $"{ScoreDataBuffer.FinalTime:F2}s";
