@@ -184,5 +184,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601987cdbb1a9224d8e75d8207a273d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magentSpeed: 15
+  magentSpeed: 30
   magentRange: 7

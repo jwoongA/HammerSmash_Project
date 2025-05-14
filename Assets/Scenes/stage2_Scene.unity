@@ -261,6 +261,10 @@ PrefabInstance:
       propertyPath: isInvincible
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5066125180269338138, guid: e20c2bbeaa8197b4fa122e3242c2e4da, type: 3}
+      propertyPath: invisiblePlatform
+      value: 
+      objectReference: {fileID: 1157903451}
     - target: {fileID: 7946919367436587565, guid: e20c2bbeaa8197b4fa122e3242c2e4da, type: 3}
       propertyPath: m_Name
       value: Player
@@ -652,6 +656,80 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4496523588766848140, guid: e20c2bbeaa8197b4fa122e3242c2e4da, type: 3}
   m_PrefabInstance: {fileID: 158909103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1157903450
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775370738179417533, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128952152996302762, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_Name
+      value: InvisiblePlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128952152996302762, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665076997044891043, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 496526387}
+    - target: {fileID: 8665076997044891043, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+      propertyPath: yOffset
+      value: -4.55
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+--- !u!1 &1157903451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3128952152996302762, guid: faface9c329d5cc4292d5a135191d92f, type: 3}
+  m_PrefabInstance: {fileID: 1157903450}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1312255476 stripped
 MonoBehaviour:
@@ -1524,3 +1602,4 @@ SceneRoots:
   - {fileID: 732204479521191300}
   - {fileID: 158909103}
   - {fileID: 513491636}
+  - {fileID: 1157903450}
